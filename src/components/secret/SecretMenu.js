@@ -66,4 +66,4 @@ export const SecretMenu = () => {
 // then set up custom menu form module 
 // then make custom menu form; then have the words show up (choose batter, topping, etc.)
 // try to break down the logic; what id am i grabbing and where am i sending it 
-// then hit up dakota or sydney 
+// then hit up dakota or sydney and just tell them i need some guidance 
