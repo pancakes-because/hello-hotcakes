@@ -1,6 +1,7 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { Home } from "../home/Home"
 import { SecretMenu } from "../secret/SecretMenu"
+import { Menu } from "../menu/Menu"
 
 export const ApplicationViews = () => {
     return (
@@ -16,6 +17,7 @@ export const ApplicationViews = () => {
 
                 <Route path="home" element={ <Home /> } /> 
                 <Route path="secret" element={ <SecretMenu /> } />
+                <Route path="menu" element={ <Menu /> } /> 
             </Route>
         </Routes>
     )
