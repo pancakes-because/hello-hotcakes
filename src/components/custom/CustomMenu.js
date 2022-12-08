@@ -1,40 +1,32 @@
 
 // batter, filling, stack size can be radio button or drop-down since you can only select one 
-// topping piece, since you can choose more than one, store all of the ids of the toppings you have selected
+// topping piece, since you can choose more than one, store all of the ids of the toppings you have selected 
+
 // then whenever i'm about to post all the individual toppings, iterate over the array
 // for every iteration, post wit the custom order Id and each individual order Id from the table 
 // i'll have an array with the toppings in it for each topping
-// topping.array.map --> 
+// topping.array.map --> just json.stringify it? 
+
+// recap 
+// created state 
+// fetched the data to store in state 
+// created the input field, iterated the data we got back in state
+
+// we are now tracking the choice of the batter we have selected
+// do the same exact thing for filling and stack size 
 
 
 import { useEffect, useState } from "react"
 
 export const CustomMenu = () => {
 
-    // const [secretMenuItems, setSecretMenuItems] = useState({
-    //     name: "",
-    //     price: 0,
-    //     id: 0
-    // })
-
-    // useEffect(
-    //     () => {
-    //         fetch(`http://localhost:8088/secretMenuItems`)
-    //             .then(response => response.json())
-    //             .then((secretMenuItemsArray) => {
-    //                 setSecretMenuItems(secretMenuItemsArray)
-    //             })
-    //     },
-    //     []
-    // )
-
     const [customMenuItemsBatters, setCustomMenuItemsBatters] = useState([])
 
     const [customMenuItemsFillings, setCustomMenuItemsFillings] = useState([])
 
-    const [customMenuItemsToppings, setCustomMenuItemsToppings] = useState([])
-
     const [customMenuItemsStackSizes, setCustomMenuItemsStackSizes] = useState([])
+
+    const [customMenuItemsToppings, setCustomMenuItemsToppings] = useState([])
 
     // we have a place to store our choices here with state below 
 
@@ -85,60 +77,68 @@ export const CustomMenu = () => {
     */
 
 
-    // created state 
-    // fetched the data to store in state 
-    // created the input field, iterated the data we got back in state
-
-    // we are now tracking the choice of the batter we have selected
-    // do the same exact thing for filling and stack size 
-
     return <>
 
-        <form className="classic_menu">
-            <h2 className="classic__title">Custom Menu</h2>
+        <form className="custom_menu">
+            <h2 className="custom__title">Custom Menu</h2>
+
             <fieldset>
                 <div className="form-group">
-
-                    <select name="cars" id="cars"
+                    <select name="batters" id="batters"
                         onChange={
                             (evt) => {
                                 const copy = { ...choices }
                                 copy.batterId = parseInt(evt.target.value)
                                 setChoices(copy)
                             }} >
-                        <option value={0}>Please select batter...</option>
+                        <option value={0}>Choose pancake batter...</option>
                         {customMenuItemsBatters.map(customMenuItemsBatter => {
-                            return <option value={customMenuItemsBatter.id}>{customMenuItemsBatter.name} {customMenuItemsBatter.price}</option>
+                            return <option value={customMenuItemsBatter.id}>{customMenuItemsBatter.name}, ${customMenuItemsBatter.price.toFixed(2)}</option>
                         })}
-                    </select>
-
-                    {/* {menuItemChoices.map(menuItemChoice => {
-
-                return <> <label htmlFor="classic menu">{menuItemChoice.name}{menuItemChoice.price}</label>
-                    <input
-                        required autoFocus
-                        className="form-control"
-                        type="radio"
-                        key={`choice--${menuItemChoice.id}`}
-                        name="pancakes"
-                        value={menuItemChoice.name}
-                        // onChange={
-                        //     (evt) => {
-                        //         // TODO: Update name and price properties with what user typed in
-                        //            const copy = {...secretMenuItemChoices}
-                        //            copy.name = evt.target.value
-                        //            setSecretMenuItemChoice(copy)
-                        // }} 
-                        />  
-                        </> })  
-                    }  */}
+                    </select> 
                 </div>
-            </fieldset>
+            </fieldset> 
+
+            <fieldset>
+                <div className="form-group">
+                    <select name="fillings" id="fillings"
+                        onChange={
+                            (evt) => {
+                                const copy = { ...choices }
+                                copy.batterId = parseInt(evt.target.value)
+                                setChoices(copy)
+                            }} >
+                        <option value={0}>Choose pancake filling...</option>
+                        {customMenuItemsFillings.map(customMenuItemsFilling => {
+                            return <option value={customMenuItemsFilling.id}>{customMenuItemsFilling.name}, ${customMenuItemsFilling.price.toFixed(2)}</option>
+                        })}
+                    </select> 
+                </div>
+            </fieldset> 
+
+            <fieldset>
+                <div className="form-group">
+                    <select name="stack_sizes" id="stack_sizes"
+                        onChange={
+                            (evt) => {
+                                const copy = { ...choices }
+                                copy.batterId = parseInt(evt.target.value)
+                                setChoices(copy)
+                            }} >
+                        <option value={0}>Choose number of pancakes...</option>
+                        {customMenuItemsStackSizes.map(customMenuItemsStackSize => {
+                            return <option value={customMenuItemsStackSize.id}>{customMenuItemsStackSize.stackSize}, ${customMenuItemsStackSize.price.toFixed(2)}</option>
+                        })}
+                    </select> 
+                </div>
+            </fieldset> 
+
             <button
                 // onClick={}
                 className="btn btn-primary">
                 Add to cart
-            </button>
+            </button> 
+
         </form>
     </>
 }
