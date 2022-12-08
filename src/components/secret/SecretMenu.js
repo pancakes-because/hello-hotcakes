@@ -85,7 +85,7 @@ export const SecretMenu = () => {
 
                     {secretMenuItemChoices.map(secretMenuItemChoice => {
 
-                return <> <label htmlFor="secret menu">{secretMenuItemChoice.name}{secretMenuItemChoice.price}</label>
+                return <> <label htmlFor="secret menu">{secretMenuItemChoice.name}, ${secretMenuItemChoice.price.toFixed(2)}</label>
                     <input
                         required autoFocus
                         className="form-control"
@@ -113,31 +113,4 @@ export const SecretMenu = () => {
     </>
 }
 
-
-    // return <>
-
-    //     <form className="secret__menu">
-    //         <h2 className="secret__title">Secret Menu</h2>
-    //         <fieldset>
-    //             <div className="form-group">
-    //                 <label htmlFor="secret menu">Please choose what you want to order:</label>
-    //                 <input
-    //                     required autoFocus
-    //                     type="radio"
-    //                     className="form-control"
-    //                     // value={secretMenuItem.id}
-    //                     onChange={
-    //                         (evt) => {
-    //                             // TODO: Update with user's choices
-    //                         }
-    //                     } />
-    //             </div>
-    //         </fieldset>
-    //         <button
-    //             // onClick={(clickEvent)} => handleSaveButtonClick{clickEvent}
-    //             className="btn btn-primary">
-    //             Add to cart
-    //         </button>
-    //     </form>
-    // </> 
 
