@@ -89,9 +89,9 @@ export const SecretMenu = () => {
                     <input
                         required autoFocus
                         className="form-control"
+                        key={secretMenuItemChoice.id}
                         type="radio"
-                        key={`choice--${secretMenuItemChoice.id}`}
-                        name="pancakes"
+                        name="secret_menu_item"
                         value={secretMenuItemChoice.name}
                         // onChange={
                         //     (evt) => {
