@@ -2,79 +2,62 @@ import { useEffect, useState } from "react"
 
 export const Menu = () => {
 
-    // const [secretMenuItems, setSecretMenuItems] = useState({
-    //     name: "",
-    //     price: 0,
-    //     id: 0
-    // })
+    // we have an initial state variable to render the menu form, which has radio buttons to let users to make their choices
+    // we're fetching the menu items to display for the user when they see the form
+    // then when the user starts clicking the radio buttons, the state is changing
+    // so using the onChange event listener, we're copying the initial state and modifying it 
 
-    // useEffect(
-    //     () => {
-    //         fetch(`http://localhost:8088/secretMenuItems`)
-    //             .then(response => response.json())
-    //             .then((secretMenuItemsArray) => {
-    //                 setSecretMenuItems(secretMenuItemsArray)
-    //             })
-    //     },
-    //     []
-    // )
-
-    // both useEffects do the same thing right now, 
-
-    // this is where the user's choices live 
-
-    const [menuItemChoices, setMenuItemChoices] = useState([]) 
+    const [menuItems, setMenuItems] = useState([]) 
 
     useEffect(
         () => {
-            fetch(`http://localhost:8088/menuItems`)
+            fetch(`http://localhost:8088/secretMenuItems`)
                 .then(response => response.json())
                 .then((menuItemsArray) => {
-                    setMenuItemChoices(menuItemsArray)
+                    setMenuItems(menuItemsArray)
                 })
         },
         []
-    )
+    ) 
 
-    // const handleSaveButtonClick = (event) => {
-    //     event.preventDefault()
+    const [menuItemChoices, setMenuItemChoices] = useState({
+        name: ""
+    }) 
 
-    /*
-        TODO: Perform the PUT or POST fetch() call here to add to cart? 
+    const handleSaveButtonClick = (event) => {
+        event.preventDefault()
 
-    */
-
+    } 
 
     return <>
 
         <form className="classic_menu">
-            <h2 className="classic__title">Secret Menu</h2>
+            <h2 className="classic__title">Classic Menu</h2>
             <fieldset>
                 <div className="form-group">
 
-                    {menuItemChoices.map(menuItemChoice => {
+                    {menuItems.map(menuItem => {
 
-                return <> <label htmlFor="classic menu">{menuItemChoice.name}, ${menuItemChoice.price.toFixed(2)}</label>
+                return <> <label htmlFor="classic menu">{menuItem.name}, ${menuItem.price.toFixed(2)}</label>
                     <input
                         required autoFocus
                         className="form-control"
+                        key={`menu_choice--${menuItem.id}`}
                         type="radio"
-                        key={`choice--${menuItemChoice.id}`}
-                        name="pancakes"
-                        value={menuItemChoice.name}
-                        // onChange={
-                        //     (evt) => {
-                        //         // TODO: Update name and price properties with what user typed in
-                        //            const copy = {...secretMenuItemChoices}
-                        //            copy.name = evt.target.value
-                        //            setSecretMenuItemChoice(copy)
-                        // }} 
+                        name="classic_menu_item"
+                        value={menuItem.name}
+                        onChange={
+                            (evt) => {
+                                const copy = { ...setMenuItemChoices }
+                                copy.name = evt.target.value
+                                setMenuItemChoices(copy)
+                            }} 
                         />  
                         </> })  
                     } </div>
         </fieldset>
         <button
-            // onClick={}
+            onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
             className="btn btn-primary">
             Add to cart
         </button>

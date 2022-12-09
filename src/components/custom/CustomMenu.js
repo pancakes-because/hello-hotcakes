@@ -84,16 +84,16 @@ export const CustomMenu = () => {
 
             <fieldset>
                 <div className="form-group">
-                    <select name="batters" id="batters"
+                    <select name="batters" id="batters" 
                         onChange={
                             (evt) => {
                                 const copy = { ...choices }
                                 copy.batterId = parseInt(evt.target.value)
                                 setChoices(copy)
                             }} >
-                        <option value={0}>Choose pancake batter...</option>
-                        {customMenuItemsBatters.map(customMenuItemsBatter => {
-                            return <option value={customMenuItemsBatter.id}>{customMenuItemsBatter.name}, ${customMenuItemsBatter.price.toFixed(2)}</option>
+                        <option key={0} value={0}>Choose pancake batter...</option> 
+                        {customMenuItemsBatters.map(customMenuItemsBatter => { 
+                            return <option key={customMenuItemsBatter.id} value={customMenuItemsBatter.id}>{customMenuItemsBatter.name}, ${customMenuItemsBatter.price.toFixed(2)}</option>
                         })}
                     </select> 
                 </div>
@@ -101,16 +101,16 @@ export const CustomMenu = () => {
 
             <fieldset>
                 <div className="form-group">
-                    <select name="fillings" id="fillings"
+                    <select name="fillings" id="fillings" 
                         onChange={
                             (evt) => {
                                 const copy = { ...choices }
-                                copy.batterId = parseInt(evt.target.value)
+                                copy.fillingId = parseInt(evt.target.value)
                                 setChoices(copy)
                             }} >
-                        <option value={0}>Choose pancake filling...</option>
+                        <option key={0} value={0}>Choose pancake filling...</option>
                         {customMenuItemsFillings.map(customMenuItemsFilling => {
-                            return <option value={customMenuItemsFilling.id}>{customMenuItemsFilling.name}, ${customMenuItemsFilling.price.toFixed(2)}</option>
+                            return <option key={customMenuItemsFilling.id} value={customMenuItemsFilling.id}>{customMenuItemsFilling.name}, ${customMenuItemsFilling.price.toFixed(2)}</option>
                         })}
                     </select> 
                 </div>
@@ -118,16 +118,16 @@ export const CustomMenu = () => {
 
             <fieldset>
                 <div className="form-group">
-                    <select name="stack_sizes" id="stack_sizes"
+                    <select name="stack_sizes" id="stack_sizes" 
                         onChange={
                             (evt) => {
                                 const copy = { ...choices }
-                                copy.batterId = parseInt(evt.target.value)
+                                copy.stackSizeId = parseInt(evt.target.value)
                                 setChoices(copy)
                             }} >
-                        <option value={0}>Choose number of pancakes...</option>
-                        {customMenuItemsStackSizes.map(customMenuItemsStackSize => {
-                            return <option value={customMenuItemsStackSize.id}>{customMenuItemsStackSize.stackSize}, ${customMenuItemsStackSize.price.toFixed(2)}</option>
+                        <option key={0} value={0}>Choose number of pancakes...</option> 
+                        {customMenuItemsStackSizes.map(customMenuItemsStackSize => { 
+                            return <option key={customMenuItemsStackSize.id} value={customMenuItemsStackSize.id}>{customMenuItemsStackSize.stackSize}, ${customMenuItemsStackSize.price.toFixed(2)}</option>
                         })}
                     </select> 
                 </div>
