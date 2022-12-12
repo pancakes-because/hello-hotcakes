@@ -73,7 +73,7 @@ export const Register = (props) => {
                 <fieldset>
                     <input onChange={(evt) => {
                         const copy = {...customer}
-                        copy.isStaff = evt.target.checked
+                        copy.isMember = true 
                         setCustomer(copy)
                     }}
                         type="checkbox" id="isMembr" />

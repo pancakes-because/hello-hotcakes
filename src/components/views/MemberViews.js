@@ -1,8 +1,9 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { Home } from "../home/Home"
 import { Menu } from "../menu/Menu"
-import { SecretMenu } from "../secret/SecretMenu"
 import { CustomMenu } from "../custom/CustomMenu"
+import { SecretMenu } from "../secret/SecretMenu" 
+import { Cart } from "../cart/Cart" 
 
 export const MemberViews = () => {
     return (
@@ -17,9 +18,10 @@ export const MemberViews = () => {
             }>
 
                 <Route path="home" element={ <Home /> } /> 
-                <Route path="secret" element={ <SecretMenu /> } />
                 <Route path="menu" element={ <Menu /> } /> 
                 <Route path="custom" element={ <CustomMenu /> } /> 
+                <Route path="secret" element={ <SecretMenu /> } />
+                <Route path="cart" element={ <Cart /> } />
             </Route>
         </Routes>
     )
