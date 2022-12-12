@@ -2,6 +2,7 @@ import { Outlet, Route, Routes } from "react-router-dom"
 import { Home } from "../home/Home"
 import { Menu } from "../menu/Menu"
 import { CustomMenu } from "../custom/CustomMenu"
+import { Cart } from "../cart/Cart"
 
 export const GuestViews = () => {
     return (
@@ -18,6 +19,7 @@ export const GuestViews = () => {
                 <Route path="home" element={ <Home /> } /> 
                 <Route path="menu" element={ <Menu /> } /> 
                 <Route path="custom" element={ <CustomMenu /> } /> 
+                <Route path="cart" element={ <Cart /> } />
             </Route>
         </Routes>
     )

@@ -19,11 +19,15 @@ export const MemberNav = () => {
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/custom">Custom Menu</Link>
             </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/cart">Cart</Link>
+            </li>
             {
                 localStorage.getItem("hotcakes_user")
                     ? <li className="navbar__item navbar__logout">
                         <Link className="navbar__link" to="" onClick={() => {
                             localStorage.removeItem("hotcakes_user")
+                            localStorage.removeItem("cart")
                             navigate("/", {replace: true})
                         }}>Logout</Link>
                     </li>
