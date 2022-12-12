@@ -36,3 +36,6 @@ export const MemberNav = () => {
         </ul>
     )
 }
+
+// added some logic here for the "cart", so each user has a unique cart 
+// without this, users would log in and add their choices to the SAME cart -- do not want this 

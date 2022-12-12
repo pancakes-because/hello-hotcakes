@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
 import "./Menu.css" 
 
 export const Menu = () => {
 
+    // we made a cart object for local storage, so each user gets a cart as soon as they login
+    // see Login.js for more context if needed 
+
     const localCart = localStorage.getItem("cart")
     const hotcakesCartObject  = JSON.parse(localCart)
 
-    // we have an initial state variable to render the menu form, which has radio buttons to let users to make their choices
+    // got a initial state variable to render the menu form, which has radio buttons to let users to make their choices
     // we're fetching the menu items to display for the user when they see the form
 
     // then when the user starts clicking the radio buttons, the state is changing
@@ -33,12 +35,9 @@ export const Menu = () => {
     // "menuItemChoices" holds the user's choices
     // must send to "menuOrders" table (id, menuItemId, and cartId)  
     // so to make sure the menuItem info is carried over, we need to fetch on this and expand into menuOrders
+    // *** lets you add more than once item from the same menu to the cart; click cart button each time after making a choice 
    
-    const [menuItemChoices, setMenuItemChoices] = useState({
-        // id: menuItems.id,
-        // name: menuItems.name, 
-        // price: menuItems.price 
-    }) 
+    const [menuItemChoices, setMenuItemChoices] = useState({}) 
 
     const handleSaveButtonClick = (event) => {
         event.preventDefault() 
@@ -48,8 +47,6 @@ export const Menu = () => {
             menuItemId: menuItemChoices.menuItemId,
             cartId: hotcakesCartObject.cartId, 
         } 
-
-        // possible URL? http://localhost:8088/menuOrders?_expand=menuItem 
 
         return fetch(`http://localhost:8088/menuOrders?_expand=menuItem=${menuItemChoices.id}`, {
             method: "POST",
