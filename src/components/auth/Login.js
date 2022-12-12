@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
 
+// IMPORTANT NOTE 
+// ideally, each user that logins will have their own unique cart to fill with orders 
+// that cart should also be empty 
+// so we created a function called "createNewCartForUser" that creates an object with properties called "newCartForUser"
+
 export const Login = () => {
     const [email, set] = useState("rubyred@me.com")
     const navigate = useNavigate()
