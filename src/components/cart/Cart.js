@@ -1,45 +1,152 @@
 
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
-// need to fetch the user's orders 
 
 export const Cart = () => {
 
-    // const [menuItems, setMenuItems] = useState([]) 
+    const localCart = localStorage.getItem("cart")
+    const hotcakesCartObject = JSON.parse(localCart)
 
-    // const [customMenuItems, setCustomMenuItems] = useState([]) 
+    const handleSaveButtonClick = (event) => {
+        event.preventDefault()
 
-    // const [secretMenuItems, setSecretMenuItems] = useState([]) 
+    }
 
-    //     useEffect(
-    //     () => {
+    const navigate = useNavigate()
 
-    //         fetch(`http://localhost:8088/menuOrders?_expand=menuItem&_expand=cart`)
-    //             .then(response => response.json())
-    //             .then((menuOrdersArray) => {
-    //                 setCustomMenuItemsBatters(customMenuItemsArray)
-    //             })
+    // // there are three "menus" or forms: menu, custom menu, and secret menu 
+    // // when the user fills out any of the forms and clicks the "add to cart" button, a new "order" is created 
+    // // every order created should display on the cart page 
+    // // to get the orders to display, we have to FETCH each of the orders 
+    // // need to EXPAND to get all the properties to display 
 
-    //         fetch(`http://localhost:8088/customMenuOrders?_expand=customMenuItem&_expand=cart`)
-    //             .then(response => response.json())
-    //             .then((customMenuOrdersArray) => {
-    //                 setCustomMenuItemsFillings(customMenuItemsArray)
-    //             })
+    const [menuOrders, setMenuOrders] = useState([])
 
-    //         fetch(`http://localhost:8088/secretMenuOrders?_expand=secretMenuItem&_expand=cart`)
-    //             .then(response => response.json())
-    //             .then((secretMenuOrdersArray) => {
-    //                 setCustomMenuItemsToppings(customMenuItemsArray)
-    //             })
+    const [secretMenuOrders, setSecretMenuOrders] = useState([])
 
-    //     },
-    //     []
-    // )
-    
+    const [customMenuOrders, setCustomMenuOrders] = useState([])
+
+    useEffect(
+        () => {
+
+            fetch(`http://localhost:8088/menuOrders?cartId=${hotcakesCartObject.cartId}&_expand=menuItem`)
+                .then(response => response.json())
+                .then((menuOrdersArray) => {
+                    setMenuOrders(menuOrdersArray)
+                })
+
+            fetch(`http://localhost:8088/secretMenuOrders?cartId=${hotcakesCartObject.cartId}&_expand=secretMenuItem`)
+                .then(response => response.json())
+                .then((secretMenuOrdersArray) => {
+                    setSecretMenuOrders(secretMenuOrdersArray)
+                })
+
+            fetch(`http://localhost:8088/customMenuItems?_expand=batter&_expand=filling&_expand=topping&_expand=stackSize&_embed=customMenuOrders`)
+                .then(response => response.json())
+                .then((customMenuOrdersArray) => {
+                    const filteredArray = customMenuOrdersArray.filter((customMenuOrder) => {
+                        return customMenuOrder.customMenuOrders[0].cartId === hotcakesCartObject.cartId
+                    })
+                    return filteredArray
+                    // console.log(customMenuOrdersArray[0].customMenuOrders[0].cartId)
+                })
+                .then(filteredArray => {
+                    console.log(filteredArray)
+                    setCustomMenuOrders(filteredArray)
+                })
+        },
+        []
+    )
+
+    // // for every "order" created, there should be an "EDIT order" button 
+    // // the "edit" function for each form is kept in a separate module (i.e. "MenuEdit" is the PUT request)
+    // // for every "order" created, there should be a "DELETE order" button 
+    // // the "delete" function for each form is kept in a separate module (i.e. "MenuEdit" is the PUT request)
+    // // use .map to filter through each order and return/create an edit and delete button 
+
+    // // *** note, some users will have orders from the secret menu and some will not 
+    // // write an if...else statement to determine if this needs to be fetched or not? or use optional chaining? 
+
+
     return <>
-    
-        <h2>Orders</h2>
+
+        <h2>Cart</h2>
+
+        <h3>Menu Orders</h3>
+
+        {
+            menuOrders.length ?
+                menuOrders.map(menuOrder => {
+                    return (
+                        <div>
+                            <h3>Order {menuOrder.id}</h3>
+                            <p>{menuOrder.menuItem?.name}</p>
+                            <button
+                                onClick={(clickEvent) => navigate(`/menu/${menuOrder.id}/edit`)}
+                                className="btn btn-primary">
+                                Edit Order
+                            </button>
+
+                            <button
+                                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                                className="btn btn-primary">
+                                Delete Order
+                            </button>
+                        </div>)
+                })
+                : ""
+        }
+
+        <h3>Custom Menu Orders</h3>
+
+        {customMenuOrders.length ? customMenuOrders.map(customMenuOrder => {
+            return (
+                <div>
+                    <h3>Order {customMenuOrder.id}</h3>
+                    <p>{customMenuOrder.batter?.name}</p>
+                    <p>{customMenuOrder.filling?.name}</p>
+                    <p>{customMenuOrder.topping?.name}</p>
+                    <p>{customMenuOrder.stackSize?.stackSize}</p>
+                    <button
+                        onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                        className="btn btn-primary">
+                        Edit Order
+                    </button>
+                    <button
+                        onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                        className="btn btn-primary">
+                        Delete Order
+                    </button>
+                </div>)
+        })
+            : ""
+        }
 
     </>
-
 }
+
+ // if (secretMenuOrder.id) {
+
+        //     {
+        //         secretMenuOrders.map(secretMenuOrder => {
+
+        //             <div>
+        //                 <h3>Order ${secretMenuOrder.id}</h3>
+        //                 <button
+        //                     onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+        //                     className="btn btn-primary">
+        //                     Edit Order
+        //                 </button>
+        //                 <button
+        //                     onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+        //                     className="btn btn-primary">
+        //                     Delete Order
+        //                 </button>
+        //             </div>
+        //         })
+        //     }
+
+        // } else {
+        //     ""
+        // }

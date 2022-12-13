@@ -3,6 +3,8 @@ import { Home } from "../home/Home"
 import { Menu } from "../menu/Menu"
 import { CustomMenu } from "../custom/CustomMenu"
 import { Cart } from "../cart/Cart"
+import { MenuEdit } from "../menu/MenuEdit"
+import { CustomMenuEdit } from "../custom/CustomMenuEdit"
 
 export const GuestViews = () => {
     return (
@@ -17,8 +19,13 @@ export const GuestViews = () => {
             }>
 
                 <Route path="home" element={ <Home /> } /> 
+
                 <Route path="menu" element={ <Menu /> } /> 
+                <Route path="menu/:menuOrderId/edit" element={ < MenuEdit /> } />
+
                 <Route path="custom" element={ <CustomMenu /> } /> 
+                <Route path="menu/:customMenuOrderId/edit" element={ < CustomMenuEdit /> } /> 
+
                 <Route path="cart" element={ <Cart /> } />
             </Route>
         </Routes>

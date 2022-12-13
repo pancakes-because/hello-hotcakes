@@ -6,6 +6,7 @@
 // we are now tracking the choice of the batter we have selected
 
 import { useEffect, useState } from "react"
+// import "./CustomMenu.css" 
 
 export const CustomMenu = () => {
 
@@ -80,6 +81,10 @@ export const CustomMenu = () => {
             cartId: hotcakesCartObject.cartId,
         }
 
+        // based on the data, we have to post to customMenuItems first 
+        // then, we post the information in customMenuItems to customMenuOrders next 
+        // this sets us up to get this data on in the cart by expanding on both data tables 
+
         return fetch(`http://localhost:8088/customMenuItems`, {
             method: "POST",
             headers: {
@@ -110,9 +115,9 @@ export const CustomMenu = () => {
 
         <form className="custom_menu">
             <h2 className="custom_title">Custom Menu</h2>
+            <h3>Build your own stack of pancakes!</h3> 
 
-
-            <h3 className="custom_batters_field">Batters</h3>
+            <h4 className="custom_batters_field">Batters</h4>
             <fieldset>
                 <div className="form-group">
                     <select name="batters" id="batters"
@@ -130,7 +135,7 @@ export const CustomMenu = () => {
                 </div>
             </fieldset>
 
-            <h3 className="custom_fillings_field">Fillings</h3>
+            <h4 className="custom_fillings_field">Fillings</h4>
             <fieldset>
                 <div className="form-group">
                     <select name="fillings" id="fillings"
@@ -152,7 +157,7 @@ export const CustomMenu = () => {
             {/* new stretch goal: make it so that more than one topping can be added to a pancake order  */}
             {/* use promise.all to make it so that you can have more than one topping for a custom pancake order  */}
 
-            <h3 className="custom_toppings_field">Toppings</h3>
+            <h4 className="custom_toppings_field">Toppings</h4>
             <fieldset>
                 <div className="form-group">
                     <select name="toppings" id="toppings"
@@ -170,7 +175,7 @@ export const CustomMenu = () => {
                 </div>
             </fieldset>
 
-            <h3 className="custom_stack_sizes_field">Stack Sizes</h3>
+            <h4 className="custom_stack_sizes_field">Stack Sizes</h4>
             <fieldset>
                 <div className="form-group">
                     <select name="stack_sizes" id="stack_sizes"
