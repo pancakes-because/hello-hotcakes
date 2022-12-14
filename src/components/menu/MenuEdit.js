@@ -7,8 +7,8 @@
 // have this target an id like http://localhost:8088/menuOrders/${menuOrder.id}
 
 import { useEffect, useState } from "react"
-import { Link, useNavigate, useParams } from "react-router-dom"
-import "./Menu.css"
+import { useNavigate, useParams } from "react-router-dom"
+// import "./Menu.css"
 
 export const MenuEdit = () => {
 
@@ -80,10 +80,6 @@ export const MenuEdit = () => {
 
     return <>
 
-        <header>
-            {/* <Link to={`/menu/${menuItem.id}/edit`}>Edit Order {menuItem.id}</Link> */}
-        </header>
-
         <form className="classic_menu">
             <h2 className="classic__title">Classic Menu</h2>
             <fieldset>
@@ -113,7 +109,7 @@ export const MenuEdit = () => {
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary">
-                Save Edits
+                Save Edit
             </button>
         </form>
     </>
