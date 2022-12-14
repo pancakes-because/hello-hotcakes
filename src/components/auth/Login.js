@@ -35,7 +35,7 @@ export const Login = () => {
 
                 createNewCartForUser(newCartForUser)
 
-                    navigate("/")
+                    navigate("/home")
                 }
                 else {
                     window.alert("Invalid login")

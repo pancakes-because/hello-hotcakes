@@ -78,7 +78,7 @@ export const CustomMenu = () => {
         const customMenuChoicesToSendToAPI = {
             id: customMenuItemChoices.id,
             customMenuItemId: customMenuItemChoices.customMenuItemId,
-            cartId: hotcakesCartObject.cartId,
+            cartId: hotcakesCartObject.cartId
         }
 
         // based on the data, we have to post to customMenuItems first 

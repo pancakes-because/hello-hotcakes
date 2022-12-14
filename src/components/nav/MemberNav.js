@@ -4,6 +4,9 @@ import "./NavBar.css"
 export const MemberNav = () => {
     const navigate = useNavigate()
 
+    const localHotcakesUser = localStorage.getItem("cart")
+    const hotcakesUserObject = JSON.parse(localHotcakesUser)
+
     return (
         <ul className="navbar">
 
@@ -26,9 +29,14 @@ export const MemberNav = () => {
                 localStorage.getItem("hotcakes_user")
                     ? <li className="navbar__item navbar__logout">
                         <Link className="navbar__link" to="" onClick={() => {
-                            localStorage.removeItem("hotcakes_user")
-                            localStorage.removeItem("cart")
-                            navigate("/", {replace: true})
+                            fetch(`http://localhost:8088/carts/${hotcakesUserObject.cartId}`, {
+                                method: "DELETE"
+                            }).then((res) => res.json())
+                                .then(() => {
+                                    localStorage.removeItem("hotcakes_user")
+                                    localStorage.removeItem("cart")
+                                    navigate("/", { replace: true })
+                                })
                         }}>Logout</Link>
                     </li>
                     : ""

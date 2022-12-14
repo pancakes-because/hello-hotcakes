@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router-dom"
 // import "./SecretMenu.css" 
 
 export const SecretMenuEdit = () => {
@@ -8,22 +9,7 @@ export const SecretMenuEdit = () => {
     // then when the user starts clicking the radio buttons, the state is changing
     // so using the onChange event listener, see below in form, we're copying the initial state and modifying it 
 
-    const [menuSecretItems, setSecretMenuItems] = useState({
-        id: 0,
-        name: "",
-        price: 0
-    })
-
-    useEffect(
-        () => {
-            fetch(`http://localhost:8088/menuItems`)
-                .then(response => response.json())
-                .then((menuSecretItemsArray) => {
-                    setMenuItems(menuSecretItemsArray)
-                })
-        },
-        []
-    )
+    const [secretMenuItems, setSecretMenuItems] = useState([])
 
     // this is to edit the user's selections later in the cart 
     // *** remember to change the URL in the PUT fetch request to target a specific thing 
@@ -31,25 +17,49 @@ export const SecretMenuEdit = () => {
 
     const [secretMenuItemChoices, setSecretMenuItemChoices] = useState({
         id: 0,
-        menuItemId: 0,
+        secretMenuItemId: 0,
         cartId: 0
     })
+
+    const { secretMenuOrderId } = useParams()
+    const navigate = useNavigate()
+
+    useEffect(
+        () => {
+            fetch(`http://localhost:8088/secretMenuOrders?id=${secretMenuOrderId}`)
+                .then(response => response.json())
+                .then((data) => {
+                    setSecretMenuItemChoices(data[0])
+                })
+        },
+        []
+    )
+
+    useEffect(
+        () => {
+            fetch(`http://localhost:8088/secretMenuItems`)
+                .then(response => response.json())
+                .then((secretMenuItemsArray) => {
+                    setSecretMenuItems(secretMenuItemsArray)
+                })
+        },
+        []
+    )
 
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
-        return fetch(`http://localhost:8088/secretMenuOrders/${secretMenuOrder.id}`, {
+        return fetch(`http://localhost:8088/secretMenuOrders/${secretMenuItemChoices.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify
+            body: JSON.stringify(secretMenuItemChoices)
         })
             .then(response => response.json())
-            .then((secretMenuOrdersArray) => {
-                setMenuItems(secretMenuOrdersArray)
+            .then(() => {
+                navigate("/cart")
             })
-
     }
 
 
@@ -64,6 +74,7 @@ export const SecretMenuEdit = () => {
 
                         return <> <label htmlFor="secret menu">{secretMenuItem.name}, ${secretMenuItem.price.toFixed(2)}</label>
                             <input
+                                checked={secretMenuItemChoices.secretMenuItemId === secretMenuItem.id? true : false}
                                 required autoFocus
                                 className="form-control"
                                 key={`secret_menu_choice--${secretMenuItem.id}`}
@@ -72,7 +83,7 @@ export const SecretMenuEdit = () => {
                                 value={secretMenuItem.id}
                                 onChange={
                                     (evt) => {
-                                        const copy = { ...setSecretMenuItemChoices }
+                                        const copy = { ...secretMenuItemChoices }
                                         copy.secretMenuItemId = parseInt(evt.target.value)
                                         setSecretMenuItemChoices(copy)
                                     }}
@@ -84,7 +95,7 @@ export const SecretMenuEdit = () => {
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary">
-                Save
+                Save Edit
             </button>
         </form>
     </>

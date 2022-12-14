@@ -2,8 +2,10 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 
-
 export const Cart = () => {
+
+    const localHotcakesUser = localStorage.getItem("hotcakes_user")
+    const hotcakesUserObject = JSON.parse(localHotcakesUser)
 
     const localCart = localStorage.getItem("cart")
     const hotcakesCartObject = JSON.parse(localCart)
@@ -73,14 +75,14 @@ export const Cart = () => {
 
         <h2>Cart</h2>
 
-        <h3>Menu Orders</h3>
+        <h3> Classic Menu Orders</h3>
 
         {
             menuOrders.length ?
                 menuOrders.map(menuOrder => {
                     return (
                         <div>
-                            <h3>Order {menuOrder.id}</h3>
+                            <h4>Order {menuOrder.id}</h4>
                             <p>{menuOrder.menuItem?.name}</p>
                             <button
                                 onClick={(clickEvent) => navigate(`/menu/${menuOrder.id}/edit`)}
@@ -89,7 +91,111 @@ export const Cart = () => {
                             </button>
 
                             <button
-                                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                                onClick={(clickEvent) => {
+                                    fetch(`http://localhost:8088/menuOrders/${menuOrder.id}`, {
+                                        method: "DELETE"
+
+                                    }).then(response => response.json())
+                                        .then(() => {
+                                            fetch(`http://localhost:8088/menuOrders?cartId=${hotcakesCartObject.cartId}&_expand=menuItem`)
+                                                .then(response => response.json())
+                                                .then((menuOrdersArray) => {
+                                                    setMenuOrders(menuOrdersArray)
+                                                })
+                                        })
+                                }}
+                                className="btn btn-primary">
+                                Delete Order
+                            </button>
+                        </div>
+                    )
+                })
+                : ""
+        }
+
+
+        {hotcakesUserObject.member ? <h3>Secret Menu Orders</h3> : ""}
+
+        {
+            secretMenuOrders.length ?
+                secretMenuOrders.map(secretMenuOrder => {
+                    return (
+                        <div>
+                            <h4>Order {secretMenuOrder.id}</h4>
+                            <p>{secretMenuOrder.secretMenuItem?.name}</p>
+                            <button
+                                onClick={(clickEvent) => navigate(`/secret/${secretMenuOrder.id}/edit`)}
+                                className="btn btn-primary">
+                                Edit Order
+                            </button>
+                            <button
+                                onClick={(clickEvent) => {
+                                    fetch(`http://localhost:8088/secretMenuOrders/${secretMenuOrder.id}`, {
+                                        method: "DELETE"
+
+                                    }).then(response => response.json())
+                                        .then(() => {
+                                            fetch(`http://localhost:8088/secretMenuOrders?cartId=${hotcakesCartObject.cartId}&_expand=secretMenuItem`)
+                                                .then(response => response.json())
+                                                .then((secretMenuOrdersArray) => {
+                                                    setSecretMenuOrders(secretMenuOrdersArray)
+                                                })
+                                        })
+                                }}
+                                className="btn btn-primary">
+                                Delete Order
+                            </button>
+                        </div>
+                    )
+                })
+                : ""
+        }
+
+        <h3>Custom Menu Orders</h3>
+
+        {
+            customMenuOrders.length ?
+                customMenuOrders.map(customMenuOrder => {
+                    return (
+                        <div>
+                            <h4>Order {customMenuOrder.id}</h4>
+                            <p>{customMenuOrder.batter?.name}</p>
+                            <p>{customMenuOrder.filling?.name}</p>
+                            <p>{customMenuOrder.topping?.name}</p>
+                            <p>{customMenuOrder.stackSize?.stackSize}</p>
+                            <button
+                                onClick={(clickEvent) => navigate(`/custom/${customMenuOrder.id}/edit`)}
+                                className="btn btn-primary">
+                                Edit Order
+                            </button>
+                            <button
+                                onClick={(clickEvent) => {
+                                    fetch(`http://localhost:8088/customMenuOrders/${customMenuOrder.id}`, {
+                                        method: "DELETE"
+
+                                    }).then(response => response.json())
+                                        .then(() => {
+                                            fetch(`http://localhost:8088/customMenuItems/${customMenuOrder.id}`, {
+                                                method: "DELETE"
+                                            })
+                                        })
+                                        .then(() => {
+                                            fetch(`http://localhost:8088/customMenuItems?_expand=batter&_expand=filling&_expand=topping&_expand=stackSize&_embed=customMenuOrders`)
+                                                .then(response => response.json())
+                                                // .then((customMenuOrdersArray) => {
+                                                //     const filteredArray = customMenuOrdersArray.filter((customMenuOrder) => {
+                                                //         return customMenuOrder.customMenuOrders[0].cartId === hotcakesCartObject.cartId
+                                                //     })
+                                                //     return filteredArray
+                                                //     // console.log(customMenuOrdersArray[0].customMenuOrders[0].cartId)
+                                                // })
+                                                .then(filteredArray => {
+                                                    console.log(filteredArray)
+                                                    // setCustomMenuOrders(filteredArray)
+                                                    setCustomMenuOrders([])
+                                                })
+                                        })
+                                }}
                                 className="btn btn-primary">
                                 Delete Order
                             </button>
@@ -98,55 +204,13 @@ export const Cart = () => {
                 : ""
         }
 
-        <h3>Custom Menu Orders</h3>
-
-        {customMenuOrders.length ? customMenuOrders.map(customMenuOrder => {
-            return (
-                <div>
-                    <h3>Order {customMenuOrder.id}</h3>
-                    <p>{customMenuOrder.batter?.name}</p>
-                    <p>{customMenuOrder.filling?.name}</p>
-                    <p>{customMenuOrder.topping?.name}</p>
-                    <p>{customMenuOrder.stackSize?.stackSize}</p>
-                    <button
-                        onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                        className="btn btn-primary">
-                        Edit Order
-                    </button>
-                    <button
-                        onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                        className="btn btn-primary">
-                        Delete Order
-                    </button>
-                </div>)
-        })
-            : ""
-        }
+        <div>
+            <button
+                onClick={(clickEvent) => navigate(`/checkout`)}
+                className="btn btn-primary">
+                Go to Checkout
+            </button>
+        </div>
 
     </>
 }
-
- // if (secretMenuOrder.id) {
-
-        //     {
-        //         secretMenuOrders.map(secretMenuOrder => {
-
-        //             <div>
-        //                 <h3>Order ${secretMenuOrder.id}</h3>
-        //                 <button
-        //                     onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-        //                     className="btn btn-primary">
-        //                     Edit Order
-        //                 </button>
-        //                 <button
-        //                     onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-        //                     className="btn btn-primary">
-        //                     Delete Order
-        //                 </button>
-        //             </div>
-        //         })
-        //     }
-
-        // } else {
-        //     ""
-        // }

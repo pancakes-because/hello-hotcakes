@@ -5,6 +5,7 @@ import { CustomMenu } from "../custom/CustomMenu"
 import { Cart } from "../cart/Cart"
 import { MenuEdit } from "../menu/MenuEdit"
 import { CustomMenuEdit } from "../custom/CustomMenuEdit"
+import { Checkout } from "../checkout/Checkout" 
 
 export const GuestViews = () => {
     return (
@@ -24,9 +25,12 @@ export const GuestViews = () => {
                 <Route path="menu/:menuOrderId/edit" element={ < MenuEdit /> } />
 
                 <Route path="custom" element={ <CustomMenu /> } /> 
-                <Route path="menu/:customMenuOrderId/edit" element={ < CustomMenuEdit /> } /> 
+                <Route path="custom/:customMenuOrderId/edit" element={ < CustomMenuEdit /> } /> 
 
                 <Route path="cart" element={ <Cart /> } />
+
+                <Route path="checkout" element={ <Checkout /> } />
+                
             </Route>
         </Routes>
     )
