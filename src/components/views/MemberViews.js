@@ -14,8 +14,6 @@ export const MemberViews = () => {
         <Routes>
             <Route path="/" element={
                 <>
-                    {/* <h1>Hello Hotcakes</h1>
-                    <div>The taste of delicious pancakes awaits. Savor our sweet stacks!</div> */}
 
                     <Outlet />
                 </>

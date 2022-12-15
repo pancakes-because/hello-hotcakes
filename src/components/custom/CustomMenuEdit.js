@@ -141,7 +141,7 @@ export const CustomMenuEdit = () => {
             <h3 className="custom_fillings_field">Fillings</h3>
             <fieldset>
                 <div className="form-group">
-                    <select name="fillings" id="fillings"
+                    <select name="fillings" id="fillings" value={customMenuItemChoices.fillingId}
                         onChange={
                             (evt) => {
                                 const copy = { ...customMenuItemChoices }
@@ -159,7 +159,7 @@ export const CustomMenuEdit = () => {
             <h3 className="custom_toppings_field">Toppings</h3>
             <fieldset>
                 <div className="form-group">
-                    <select name="toppings" id="toppings"
+                    <select name="toppings" id="toppings" value={customMenuItemChoices.toppingId}
                         onChange={
                             (evt) => {
                                 const copy = { ...customMenuItemChoices }
@@ -177,7 +177,7 @@ export const CustomMenuEdit = () => {
             <h3 className="custom_stack_sizes_field">Stack Sizes</h3>
             <fieldset>
                 <div className="form-group">
-                    <select name="stack_sizes" id="stack_sizes"
+                    <select name="stack_sizes" id="stack_sizes" value={customMenuItemChoices.stackSizeId}
                         onChange={
                             (evt) => {
                                 const copy = { ...customMenuItemChoices }
