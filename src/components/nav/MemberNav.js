@@ -1,6 +1,14 @@
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
 
+// added some logic here for the "cart", so each user has a unique cart 
+// without, users would log in and add choices to the SAME cart -- avoid 
+
+// seeing an issue where a double click is needed to log out 
+// i think it has something to do with the fetch call 
+// know this bc i don't see this issue with guest nav logout
+// the fetch call is only in member nav, and this is what has issues 
+
 export const MemberNav = () => {
     const navigate = useNavigate()
 
@@ -45,5 +53,3 @@ export const MemberNav = () => {
     )
 }
 
-// added some logic here for the "cart", so each user has a unique cart 
-// without this, users would log in and add their choices to the SAME cart -- do not want this 

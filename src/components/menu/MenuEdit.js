@@ -89,6 +89,7 @@ export const MenuEdit = () => {
 
                         return <> <label htmlFor="classic menu">{menuItem.name}, ${menuItem.price.toFixed(2)}</label>
                             <input
+                                checked={menuItemChoices.menuItemId === menuItem.id? true : false}
                                 required autoFocus
                                 className="form-control"
                                 key={`menu_choice--${menuItem.id}`}
