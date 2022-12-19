@@ -10,7 +10,11 @@
     list-style-type: none;
 }
 
+.navbar__link {
+    text-decoration: none; 
+}
+
 .navbar__logout {
-    margin-left: auto;
+    margin-left: auto; 
 }
 

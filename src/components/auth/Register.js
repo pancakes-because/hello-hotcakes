@@ -27,7 +27,7 @@ export const Register = (props) => {
                         member: createdUser.isMember
                     }))
 
-                    navigate("/")
+                    navigate("/home")
                 }
             })
     }
@@ -49,7 +49,7 @@ export const Register = (props) => {
     }
 
     const updateCustomer = (evt) => {
-        const copy = {...customer}
+        const copy = { ...customer }
         copy[evt.target.id] = evt.target.value
         setCustomer(copy)
     }
@@ -57,7 +57,7 @@ export const Register = (props) => {
     return (
         <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Hello Hotcakes</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Please register...</h1>
                 <fieldset>
                     <label htmlFor="fullName"> Full Name </label>
                     <input onChange={updateCustomer}
@@ -72,12 +72,12 @@ export const Register = (props) => {
                 </fieldset>
                 <fieldset>
                     <input onChange={(evt) => {
-                        const copy = {...customer}
-                        copy.isMember = true 
+                        const copy = { ...customer }
+                        copy.isMember = true
                         setCustomer(copy)
                     }}
-                        type="checkbox" id="isMembr" />
-                    <label htmlFor="email"> I am a member </label>
+                        type="checkbox" id="isMember" />
+                    <label htmlFor="email"> Yes, I want to be a member! </label>
                 </fieldset>
                 <fieldset>
                     <button type="submit"> Register </button>

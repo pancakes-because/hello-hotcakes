@@ -9,7 +9,7 @@ import "./Login.css"
 // so we created a function called "createNewCartForUser" that creates an object with properties called "newCartForUser"
 
 export const Login = () => {
-    const [email, set] = useState("rubyred@me.com")
+    const [email, set] = useState("rosered@me.com")
     const navigate = useNavigate()
 
     const handleLogin = (e) => {
@@ -26,7 +26,7 @@ export const Login = () => {
                     }))
 
                 const newCartForUser = {
-                    id: 0,
+                    id: 0, 
                     userId: user.id,
                     pickUpId: 0,
                     totalPrice: "",
@@ -63,8 +63,7 @@ export const Login = () => {
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Hello Hotcakes</h1>
-                    <h2>Please sign in</h2>
+                    <h1>Please sign in...</h1>
                     <fieldset>
                         <label htmlFor="inputEmail">Email address</label>
                         <input type="email"

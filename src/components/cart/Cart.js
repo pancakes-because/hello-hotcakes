@@ -17,11 +17,11 @@ export const Cart = () => {
 
     const navigate = useNavigate()
 
-    // // there are three "menus" or forms: menu, custom menu, and secret menu 
-    // // when the user fills out any of the forms and clicks the "add to cart" button, a new "order" is created 
-    // // every order created should display on the cart page 
-    // // to get the orders to display, we have to FETCH each of the orders 
-    // // need to EXPAND to get all the properties to display 
+    // there are three "menus" or forms: menu, custom menu, and secret menu 
+    // when the user fills out any of the forms and clicks the "add to cart" button, a new "order" is created 
+    // every order created should display on the cart page 
+    // to get the orders to display, we have to FETCH each of the orders 
+    // need to EXPAND to get all the properties to display 
 
     const [menuOrders, setMenuOrders] = useState([])
 
@@ -61,28 +61,28 @@ export const Cart = () => {
         []
     )
 
-    // // for every "order" created, there should be an "EDIT order" button 
-    // // the "edit" function for each form is kept in a separate module (i.e. "MenuEdit" is the PUT request)
-    // // for every "order" created, there should be a "DELETE order" button 
-    // // the "delete" function for each form is kept in a separate module (i.e. "MenuEdit" is the PUT request)
-    // // use .map to filter through each order and return/create an edit and delete button 
+    // for every "order" created, there should be an "EDIT order" button 
+    // the "edit" function for each form is kept in a separate module (i.e. "MenuEdit" is the PUT request)
+    // for every "order" created, there should be a "DELETE order" button 
+    // the "delete" function for each form is kept in a separate module (i.e. "MenuEdit" is the PUT request)
+    // use .map to filter through each order and return/create an edit and delete button 
 
-    // // *** note, some users will have orders from the secret menu and some will not 
-    // // write an if...else statement to determine if this needs to be fetched or not? or use optional chaining? 
+    // *** note, some users will have orders from the secret menu and some will not 
+    // write an if...else statement to determine if this needs to be fetched or not? or use optional chaining? 
 
 
     return <>
 
-        <h2>Cart</h2>
+        <h1>Cart</h1>
 
-        <h3> Classic Menu Orders</h3>
+        <h2>Classic Menu Orders</h2>
 
         {
             menuOrders.length ?
                 menuOrders.map(menuOrder => {
                     return (
                         <div>
-                            <h4>Order {menuOrder.id}</h4>
+                            <h3>Order {menuOrder.id}</h3>
                             <p>{menuOrder.menuItem?.name}</p>
                             <button
                                 onClick={(clickEvent) => navigate(`/menu/${menuOrder.id}/edit`)}
@@ -114,14 +114,14 @@ export const Cart = () => {
         }
 
 
-        {hotcakesUserObject.member ? <h3>Secret Menu Orders</h3> : ""}
+        {hotcakesUserObject.member ? <h2>Secret Menu Orders</h2> : ""}
 
         {
             secretMenuOrders.length ?
                 secretMenuOrders.map(secretMenuOrder => {
                     return (
                         <div>
-                            <h4>Order {secretMenuOrder.id}</h4>
+                            <h3>Order {secretMenuOrder.id}</h3>
                             <p>{secretMenuOrder.secretMenuItem?.name}</p>
                             <button
                                 onClick={(clickEvent) => navigate(`/secret/${secretMenuOrder.id}/edit`)}
@@ -151,14 +151,14 @@ export const Cart = () => {
                 : ""
         }
 
-        <h3>Custom Menu Orders</h3>
+        <h2>Custom Menu Orders</h2>
 
         {
             customMenuOrders.length ?
                 customMenuOrders.map(customMenuOrder => {
                     return (
                         <div>
-                            <h4>Order {customMenuOrder.id}</h4>
+                            <h3>Order {customMenuOrder.id}</h3>
                             <p>{customMenuOrder.batter?.name}</p>
                             <p>{customMenuOrder.filling?.name}</p>
                             <p>{customMenuOrder.topping?.name}</p>
@@ -187,7 +187,7 @@ export const Cart = () => {
                                                 //         return customMenuOrder.customMenuOrders[0].cartId === hotcakesCartObject.cartId
                                                 //     })
                                                 //     return filteredArray
-                                                //     // console.log(customMenuOrdersArray[0].customMenuOrders[0].cartId)
+                                                //     console.log(customMenuOrdersArray[0].customMenuOrders[0].cartId)
                                                 // })
                                                 .then(filteredArray => {
                                                     console.log(filteredArray)

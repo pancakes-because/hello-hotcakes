@@ -8,7 +8,7 @@
 
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-// import "./Menu.css"
+import "./Menu.css"
 
 export const MenuEdit = () => {
 
@@ -52,7 +52,7 @@ export const MenuEdit = () => {
                 })
         },
         []
-    ) 
+    )
 
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
@@ -71,12 +71,8 @@ export const MenuEdit = () => {
 
     }
 
-    // how to get the user's chioces to autopopulate the form when editing
-    // example 1: 
-    // <input value={stateVariable.property}> </input>
-    // example 2: 
-    // used a ternary to display existing data if it existed and a placeholder value if it didn't
-    // defaultValue={existingVillage ? `${existingVillage.villageName}` : undefined} 
+    // to get the user's chioces to autopopulate the form when editing
+    // use a checked ternary statement 
 
     return <>
 
@@ -87,25 +83,28 @@ export const MenuEdit = () => {
 
                     {menuItems.map(menuItem => {
 
-                        return <> <label htmlFor="classic menu">{menuItem.name}, ${menuItem.price.toFixed(2)}</label>
-                            <input
-                                checked={menuItemChoices.menuItemId === menuItem.id? true : false}
-                                required autoFocus
-                                className="form-control"
-                                key={`menu_choice--${menuItem.id}`}
-                                type="radio"
-                                name="classic_menu_item"
-                                value={menuItem.id}
-                                onChange={
-                                    (evt) => {
-                                        const copy = { ...menuItemChoices }
-                                        copy.menuItemId = parseInt(evt.target.value) 
-                                        setMenuItemChoices(copy)
-                                    }}
-                            />
+                        return <>
+                            <div className="label_and_input_container">
+                                <input
+                                    checked={menuItemChoices.menuItemId === menuItem.id ? true : false}
+                                    required autoFocus
+                                    className="form-control"
+                                    key={`menu_choice--${menuItem.id}`}
+                                    type="radio"
+                                    name="classic_menu_item"
+                                    value={menuItem.id}
+                                    onChange={
+                                        (evt) => {
+                                            const copy = { ...menuItemChoices }
+                                            copy.menuItemId = parseInt(evt.target.value)
+                                            setMenuItemChoices(copy)
+                                        }}
+                                />
+                                <label htmlFor="classic menu">{menuItem.name}, ${menuItem.price.toFixed(2)}</label>
+                            </div>
                         </>
-                    })
-                    } </div>
+                    })}
+                </div>
             </fieldset>
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}

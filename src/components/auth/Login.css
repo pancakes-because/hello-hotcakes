@@ -56,6 +56,12 @@ fieldset {
     background-repeat: no-repeat;
 }
 
+/* removes underline from "Not a member yet?" link */ 
+
+/* a {
+    text-decoration: none; 
+} */
+
 .button--close {
     position: relative;
     bottom: -2rem;
