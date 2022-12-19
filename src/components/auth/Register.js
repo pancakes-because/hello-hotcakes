@@ -27,6 +27,16 @@ export const Register = (props) => {
                         member: createdUser.isMember
                     }))
 
+                    const newCartForUser = {
+                        id: 0,
+                        userId: createdUser.id,
+                        pickUpId: 0,
+                        totalPrice: "",
+                        phoneNumber: ""
+                    }
+
+                    createNewCartForUser(newCartForUser)
+
                     navigate("/home")
                 }
             })
@@ -52,6 +62,21 @@ export const Register = (props) => {
         const copy = { ...customer }
         copy[evt.target.id] = evt.target.value
         setCustomer(copy)
+    }
+
+    const createNewCartForUser = (cartObject) => {
+
+        return fetch(`http://localhost:8088/carts`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(cartObject)
+        })
+            .then(response => response.json())
+            .then((res) => {
+                localStorage.setItem("cart", JSON.stringify({ cartId: res.id }))
+            })
     }
 
     return (
