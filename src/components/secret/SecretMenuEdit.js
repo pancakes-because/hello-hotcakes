@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-// import "./SecretMenu.css" 
+import "./SecretMenu.css" 
 
 export const SecretMenuEdit = () => {
 
@@ -72,25 +72,28 @@ export const SecretMenuEdit = () => {
 
                     {secretMenuItems.map(secretMenuItem => {
 
-                        return <> <label htmlFor="secret menu">{secretMenuItem.name}, ${secretMenuItem.price.toFixed(2)}</label>
-                            <input
-                                checked={secretMenuItemChoices.secretMenuItemId === secretMenuItem.id? true : false}
-                                required autoFocus
-                                className="form-control"
-                                key={`secret_menu_choice--${secretMenuItem.id}`}
-                                type="radio"
-                                name="secret_menu_item"
-                                value={secretMenuItem.id}
-                                onChange={
-                                    (evt) => {
-                                        const copy = { ...secretMenuItemChoices }
-                                        copy.secretMenuItemId = parseInt(evt.target.value)
-                                        setSecretMenuItemChoices(copy)
-                                    }}
-                            />
+                        return <>
+                            <div class="label_and_input_container">
+                                <input
+                                    checked={secretMenuItemChoices.secretMenuItemId === secretMenuItem.id ? true : false}
+                                    required autoFocus
+                                    className="form-control"
+                                    key={`secret_menu_choice--${secretMenuItem.id}`}
+                                    type="radio"
+                                    name="secret_menu_item"
+                                    value={secretMenuItem.id}
+                                    onChange={
+                                        (evt) => {
+                                            const copy = { ...secretMenuItemChoices }
+                                            copy.secretMenuItemId = parseInt(evt.target.value)
+                                            setSecretMenuItemChoices(copy)
+                                        }}
+                                />
+                                <label htmlFor="secret menu">{secretMenuItem.name}, ${secretMenuItem.price.toFixed(2)}</label>
+                            </div>
                         </>
-                    })
-                    } </div>
+                    })}
+                </div>
             </fieldset>
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}

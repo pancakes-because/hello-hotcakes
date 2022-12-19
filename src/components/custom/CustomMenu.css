@@ -1,0 +1,16 @@
+/* styles for CustomMenu.css */ 
+
+/* styles for the title, "secret menu" */ 
+
+.custom__title {
+    margin-top: 20px; 
+    margin-left: 10px; 
+    margin-bottom: 0px; 
+    padding: 0px; 
+}
+
+p {
+    margin-top: 10px; 
+    margin-bottom: 0px; 
+    margin-left: 10px; 
+} 

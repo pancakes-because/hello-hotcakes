@@ -8,7 +8,7 @@
 
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-// import "./CustomMenu.css" 
+import "./CustomMenu.css" 
 
 export const CustomMenuEdit = () => {
 

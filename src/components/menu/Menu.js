@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import "./Menu.css" 
+import "./Menu.css"
 
 export const Menu = () => {
 
@@ -7,7 +7,7 @@ export const Menu = () => {
     // see Login.js for more context if needed 
 
     const localCart = localStorage.getItem("cart")
-    const hotcakesCartObject  = JSON.parse(localCart)
+    const hotcakesCartObject = JSON.parse(localCart)
 
     // got a initial state variable to render the menu form, which has radio buttons to let users to make their choices
     // we're fetching the menu items to display for the user when they see the form
@@ -15,7 +15,7 @@ export const Menu = () => {
     // then when the user starts clicking the radio buttons, the state is changing
     // so using the onChange event listener, see below in form, we're copying the initial state and modifying it 
 
-    const [menuItems, setMenuItems] = useState([]) 
+    const [menuItems, setMenuItems] = useState([])
 
     useEffect(
         () => {
@@ -26,7 +26,7 @@ export const Menu = () => {
                 })
         },
         []
-    ) 
+    )
 
     // next, save the user's choices to permanent state though... 
     // do this by using a POST request to store the user's choices to the API
@@ -36,17 +36,17 @@ export const Menu = () => {
     // must send to "menuOrders" table (id, menuItemId, and cartId)  
     // so to make sure the menuItem info is carried over, we need to fetch on this and expand into menuOrders
     // *** lets you add more than once item from the same menu to the cart; click cart button each time after making a choice 
-   
-    const [menuItemChoices, setMenuItemChoices] = useState({}) 
+
+    const [menuItemChoices, setMenuItemChoices] = useState({})
 
     const handleSaveButtonClick = (event) => {
-        event.preventDefault() 
+        event.preventDefault()
 
         const menuChoicesToSendToAPI = {
-            id: menuItemChoices.id, 
+            id: menuItemChoices.id,
             menuItemId: menuItemChoices.menuItemId,
-            cartId: hotcakesCartObject.cartId, 
-        } 
+            cartId: hotcakesCartObject.cartId,
+        }
 
         return fetch(`http://localhost:8088/menuOrders?_expand=menuItem=${menuItemChoices.id}`, {
             method: "POST",
@@ -55,43 +55,48 @@ export const Menu = () => {
             },
             body: JSON.stringify(menuChoicesToSendToAPI)
         })
-                .then(response => response.json())
-                .then(() => {})
-    } 
+            .then(response => response.json())
+            .then(() => { })
+    }
 
     return <>
 
         <form className="classic_menu">
-            <h2 className="classic__title">Classic Menu</h2>
+            <h1 className="classic__title">Classic Menu</h1>
             <fieldset>
                 <div className="form-group">
 
                     {menuItems.map(menuItem => {
 
-                return <> <label htmlFor="classic menu">{menuItem.name}, ${menuItem.price.toFixed(2)}</label>
-                    <input
-                        required autoFocus
-                        className="form-control"
-                        key={`menu_choice--${menuItem.id}`}
-                        type="radio"
-                        name="classic_menu_item"
-                        value={menuItem.id} 
-                        onChange={
-                            (evt) => {
-                                const copy = { ...setMenuItemChoices }
-                                copy.menuItemId= parseInt(evt.target.value) 
-                                setMenuItemChoices(copy)
-                            }} 
-                        />  
-                        </> })  
-                    } </div>
-        </fieldset>
-        <button
-            onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-            className="btn btn-primary">
-            Add to cart
-        </button>
-    </form>
+                        return <>
+                            <div className="label_and_input_container">
+                                <input
+                                    required autoFocus
+                                    className="form-control"
+                                    id="menu-form-control"
+                                    key={`menu_choice--${menuItem.id}`}
+                                    type="radio"
+                                    name="classic_menu_item"
+                                    value={menuItem.id}
+                                    onChange={
+                                        (evt) => {
+                                            const copy = { ...setMenuItemChoices }
+                                            copy.menuItemId = parseInt(evt.target.value)
+                                            setMenuItemChoices(copy)
+                                        }}
+                                />
+                                <label htmlFor="classic menu">{menuItem.name}, ${menuItem.price.toFixed(2)}</label>
+                            </div>
+                        </>
+                    })}
+                </div>
+            </fieldset>
+            <button
+                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                className="btn btn-primary">
+                Add to cart
+            </button>
+        </form>
     </>
 }
 
