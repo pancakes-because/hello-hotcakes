@@ -117,91 +117,93 @@ export const CustomMenu = () => {
 
             <div className="custom_title_and_tagline_container">
                 <h1 className="custom__title">Custom Menu</h1>
-                <p>Build your own stack of pancakes!</p>
+                <p className="custom_instructions">Build your own stack of pancakes!</p>
             </div>
 
-            <div className="label_and_input_container">
-                <h3 className="custom_batters_label">Batters</h3>
-                <fieldset>
-                    <div className="form-group">
-                        <select name="batters" id="batters"
-                            onChange={
-                                (evt) => {
-                                    const copy = { ...customMenuItemChoices }
-                                    copy.batterId = parseInt(evt.target.value)
-                                    setCustomMenuItemChoices(copy)
-                                }} >
-                            <option key={0} value={0}>Choose pancake batter...</option>
-                            {customMenuItemBatters.map(customMenuItemBatter => {
-                                return <option key={customMenuItemBatter.id} value={customMenuItemBatter.id}>{customMenuItemBatter.name}, ${customMenuItemBatter.price.toFixed(2)}</option>
-                            })}
-                        </select>
-                    </div>
-                </fieldset>
-            </div>
+            <div className="form_fields_container">
+                <div className="label_and_input_container">
+                    <h3 className="custom_label">Batters</h3>
+                    <fieldset>
+                        <div className="form-group">
+                            <select name="batters" id="batters"
+                                onChange={
+                                    (evt) => {
+                                        const copy = { ...customMenuItemChoices }
+                                        copy.batterId = parseInt(evt.target.value)
+                                        setCustomMenuItemChoices(copy)
+                                    }} >
+                                <option key={0} value={0}>Choose pancake batter...</option>
+                                {customMenuItemBatters.map(customMenuItemBatter => {
+                                    return <option key={customMenuItemBatter.id} value={customMenuItemBatter.id}>{customMenuItemBatter.name}, ${customMenuItemBatter.price.toFixed(2)}</option>
+                                })}
+                            </select>
+                        </div>
+                    </fieldset>
+                </div>
 
-            <div className="label_and_input_container">
-                <h3 className="custom_fillings_label">Fillings</h3>
-                <fieldset>
-                    <div className="form-group">
-                        <select name="fillings" id="fillings"
-                            onChange={
-                                (evt) => {
-                                    const copy = { ...customMenuItemChoices }
-                                    copy.fillingId = parseInt(evt.target.value)
-                                    setCustomMenuItemChoices(copy)
-                                }} >
-                            <option key={0} value={0}>Choose pancake filling...</option>
-                            {customMenuItemFillings.map(customMenuItemFilling => {
-                                return <option key={customMenuItemFilling.id} value={customMenuItemFilling.id}>{customMenuItemFilling.name}, ${customMenuItemFilling.price.toFixed(2)}</option>
-                            })}
-                        </select>
-                    </div>
-                </fieldset>
-            </div>
+                <div className="label_and_input_container">
+                    <h3 className="custom_label">Fillings</h3>
+                    <fieldset>
+                        <div className="form-group">
+                            <select name="fillings" id="fillings"
+                                onChange={
+                                    (evt) => {
+                                        const copy = { ...customMenuItemChoices }
+                                        copy.fillingId = parseInt(evt.target.value)
+                                        setCustomMenuItemChoices(copy)
+                                    }} >
+                                <option key={0} value={0}>Choose pancake filling...</option>
+                                {customMenuItemFillings.map(customMenuItemFilling => {
+                                    return <option key={customMenuItemFilling.id} value={customMenuItemFilling.id}>{customMenuItemFilling.name}, ${customMenuItemFilling.price.toFixed(2)}</option>
+                                })}
+                            </select>
+                        </div>
+                    </fieldset>
+                </div>
 
-            {/* note, we're just letting users choose one topping per pancake order to help meet MVP fast */}
-            {/* new stretch goal: make it so that more than one topping can be added to a pancake order  */}
-            {/* use promise.all to make it so that you can have more than one topping for a custom pancake order  */}
+                {/* note, we're just letting users choose one topping per pancake order to help meet MVP fast */}
+                {/* new stretch goal: make it so that more than one topping can be added to a pancake order  */}
+                {/* use promise.all to make it so that you can have more than one topping for a custom pancake order  */}
 
-            <div className="label_and_input_container">
-                <h3 className="custom_toppings_label">Toppings</h3>
-                <fieldset>
-                    <div className="form-group">
-                        <select name="toppings" id="toppings"
-                            onChange={
-                                (evt) => {
-                                    const copy = { ...customMenuItemChoices }
-                                    copy.toppingId = parseInt(evt.target.value)
-                                    setCustomMenuItemChoices(copy)
-                                }} >
-                            <option key={0} value={0}>Choose pancake topping...</option>
-                            {customMenuItemToppings.map(customMenuItemTopping => {
-                                return <option key={customMenuItemTopping.id} value={customMenuItemTopping.id}>{customMenuItemTopping.name}, ${customMenuItemTopping.price.toFixed(2)}</option>
-                            })}
-                        </select>
-                    </div>
-                </fieldset>
-            </div>
+                <div className="label_and_input_container">
+                    <h3 className="custom_label">Toppings</h3>
+                    <fieldset>
+                        <div className="form-group">
+                            <select name="toppings" id="toppings"
+                                onChange={
+                                    (evt) => {
+                                        const copy = { ...customMenuItemChoices }
+                                        copy.toppingId = parseInt(evt.target.value)
+                                        setCustomMenuItemChoices(copy)
+                                    }} >
+                                <option key={0} value={0}>Choose pancake topping...</option>
+                                {customMenuItemToppings.map(customMenuItemTopping => {
+                                    return <option key={customMenuItemTopping.id} value={customMenuItemTopping.id}>{customMenuItemTopping.name}, ${customMenuItemTopping.price.toFixed(2)}</option>
+                                })}
+                            </select>
+                        </div>
+                    </fieldset>
+                </div>
 
-            <div className="label_and_input_container">
-                <h3 className="custom_stack_sizes_label">Stack Sizes</h3>
-                <fieldset>
-                    <div className="form-group">
-                        <select name="stack_sizes" id="stack_sizes"
-                            onChange={
-                                (evt) => {
-                                    const copy = { ...customMenuItemChoices }
-                                    copy.stackSizeId = parseInt(evt.target.value)
-                                    setCustomMenuItemChoices(copy)
-                                }} >
-                            <option key={0} value={0}>Choose number of pancakes...</option>
-                            {customMenuItemStackSizes.map(customMenuItemStackSize => {
-                                return <option key={customMenuItemStackSize.id} value={customMenuItemStackSize.id}>{customMenuItemStackSize.stackSize}, ${customMenuItemStackSize.price.toFixed(2)}</option>
-                            })}
-                        </select>
-                    </div>
-                </fieldset>
+                <div className="label_and_input_container">
+                    <h3 className="custom_label">Stack Sizes</h3>
+                    <fieldset>
+                        <div className="form-group">
+                            <select name="stack_sizes" id="stack_sizes"
+                                onChange={
+                                    (evt) => {
+                                        const copy = { ...customMenuItemChoices }
+                                        copy.stackSizeId = parseInt(evt.target.value)
+                                        setCustomMenuItemChoices(copy)
+                                    }} >
+                                <option key={0} value={0}>Choose number of pancakes...</option>
+                                {customMenuItemStackSizes.map(customMenuItemStackSize => {
+                                    return <option key={customMenuItemStackSize.id} value={customMenuItemStackSize.id}>{customMenuItemStackSize.stackSize}, ${customMenuItemStackSize.price.toFixed(2)}</option>
+                                })}
+                            </select>
+                        </div>
+                    </fieldset>
+                </div>
             </div>
 
             <button
@@ -209,6 +211,7 @@ export const CustomMenu = () => {
                 className="btn btn-primary">
                 Add to cart
             </button>
+
 
         </form>
     </>

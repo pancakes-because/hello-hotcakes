@@ -7,7 +7,7 @@ import "./NavBar.css"
 // seeing an issue where a double click is needed to log out 
 // i think it has something to do with the fetch call 
 // know this bc i don't see this issue with guest nav logout
-// the fetch call is only in member nav, and this is what has issues 
+// figured this out when fetch call was only in member nav, and was the only things that had issues 
 
 export const MemberNav = () => {
     const navigate = useNavigate()
