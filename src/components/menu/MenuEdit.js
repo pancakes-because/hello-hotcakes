@@ -89,6 +89,7 @@ export const MenuEdit = () => {
                                     checked={menuItemChoices.menuItemId === menuItem.id ? true : false}
                                     required autoFocus
                                     className="form-control"
+                                    id="menu-form-control"
                                     key={`menu_choice--${menuItem.id}`}
                                     type="radio"
                                     name="classic_menu_item"
