@@ -10,21 +10,19 @@ export const Home = () => {
             <p className="tagline">The taste of delicious pancakes awaits you.</p>
         </div>
 
-        <footer className="footer_container">
+        <ul className="footer_container">
 
-            <div className="address">
-                <p>624 Maude Lane, Conway, KS, 69958</p>
-            </div>
+            <li className="footer_item">
+                624 Maude Lane, Conway, KS, 69958
+            </li>
+            <li className="footer_item">
+                hellohotcakes@gmail.com
+            </li>
+            <li className="footer_item">
+                (823) 773-0888
+            </li>
 
-            <div className="email">
-                <p>hellohotcakes@gmail.com</p>
-            </div>
-
-            <div className="phone">
-                <p>(823) 773-0888</p>
-            </div>
-
-        </footer>
+        </ul>
 
     </>
 

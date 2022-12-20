@@ -2,11 +2,14 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    text-align: center; 
+    /* justify-content: left; */
+
+    /* border: 1px dotted blue;  */
 }
 
 .navbar__item {
-    flex-basis: 20%;
+    flex-basis: 30%;
     list-style-type: none;
 }
 
