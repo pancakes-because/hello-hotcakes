@@ -1,0 +1,7 @@
+/* styles for the Cart page */ 
+
+/* adds space on the outside borders, so the text isn't touch the browser sides */ 
+
+.cart_page {
+    padding: 0 3rem;
+}

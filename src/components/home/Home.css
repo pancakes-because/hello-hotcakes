@@ -1,16 +1,10 @@
 /* styles for the Home page */ 
 
-/* styles for the body */ 
-/* adds a background image/gif */ 
-
-/* body {
-    color: white; 
-    background-image: url("https://media.giphy.com/media/uLQcLwZMcrz5m/giphy.gif"); 
-    background-size: cover; 
-} */
-
-/* styles for the container holding the title ("Hello, Hotcakes!") and tagline ("The taste of delicious pancakes awaits you.") */
+/* styles for the container holding the title and tagline */ 
 /* styles were meant to help center the title and tagline in the middle of the page */ 
+/* the margin and padding help create a banner-like space or hero image space */ 
+/* the color, background-image, and background-size style the gif to go behind the title and tagline */ 
+/* the border is for testing purposes just to see how the space is */ 
 
 .home_title_and_tagline_container {
     display: flex; 
@@ -19,10 +13,14 @@
     text-align: center; 
 
     margin: 15px 0px 0px 0px; 
-    padding: 88px 200px 88px 200px; 
     padding: 170px 0px 170px 0px; 
 
-    border: 1px dotted blue; 
+    color: white; 
+
+    background-image: url("https://media.giphy.com/media/uLQcLwZMcrz5m/giphy.gif"); 
+    background-size: cover; 
+
+    /* border: 1px dotted blue;  */
 }
 
 /* styles for the title, "Hello, Hotcakes!" */ 
@@ -30,17 +28,35 @@
 .home__title {
     font-size: 100px;
     margin-bottom: 0px; 
+    
+    text-shadow: 0px 0px 4px black;
 }
+
+.tagline {
+    text-shadow: 0px 0px 4px black;
+}
+
+/* styles for the footer holding the address, email, and phone information */ 
+/* the border is for testing purposes just to see how the space is */ 
+/* the footer container is using flexbox and contains the content */ 
 
 .footer_container {
-    display: flex;
-    flex-direction: row; 
-    justify-content: space-around;
-    align-items: center; 
+    /* display: flex; */
+    /* flex-direction: row;  */
+    /* justify-content: space-around; */
+    /* align-items: center;  */
 
-    border: 1px dotted blue; 
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+
     margin-left: 0px; 
     margin-right: 0px;
+    /* border: 1px dotted blue;  */
 }
 
+.footer_item {
+    flex-basis: 35%;
+    list-style-type: none;
+}
 
