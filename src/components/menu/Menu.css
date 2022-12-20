@@ -1,5 +1,11 @@
 /* styles for Menu.css */ 
 
+/* adds space on the outside borders, so the text isn't touch the browser sides */ 
+
+.classic_menu {
+    padding: 0 3rem;
+}
+
 /* styles for the title, "classic menu" */ 
 
 .classic__title {

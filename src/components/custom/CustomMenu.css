@@ -1,5 +1,11 @@
 /* styles for CustomMenu.css */ 
 
+/* adds space on the outside borders, so the text isn't touch the browser sides */ 
+
+.custom_menu {
+    padding: 0 3rem;
+}
+
 /* styles for the title, "secret menu" */ 
 
 .custom__title {
