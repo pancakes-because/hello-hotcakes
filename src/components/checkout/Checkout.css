@@ -1,22 +1,18 @@
-/* styles for CustomMenu.css */ 
+/* styles for the Checkout page  */ 
 
 /* adds space on the outside borders, so the text isn't touch the browser sides */ 
 
-.custom_menu {
+.checkout_page {
     padding: 0 3rem;
 }
 
-/* styles for the title, "secret menu" */ 
-
-.custom__title {
+.checkout__title {
     margin-top: 35px; 
     margin-left: 10px; 
     margin-bottom: 0px; 
     padding: 0px; 
 }
 
-p {
-    margin-top: 10px; 
-    margin-bottom: 0px; 
-    margin-left: 10px; 
-} 
+.paypal_image {
+    margin-top: 35px; 
+}
