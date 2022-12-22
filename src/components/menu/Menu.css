@@ -9,6 +9,10 @@
 /* styles for the title, "classic menu" */ 
 
 .classic__title {
+
+    color: #f5c46d; 
+    text-shadow: 1px 1px 0px #944c0f; 
+
     margin-top: 35px; 
     margin-left: 10px; 
     margin-bottom: 0px; 
@@ -23,6 +27,9 @@
 .label_and_input_container {
     display: flex; 
     align-items: center;
+
+    color: #d57a17; 
+    text-shadow: 0px 0px 0px  #944c0f;  
 }
 
 /* styles for the radio button - not the label */ 
@@ -52,5 +59,10 @@
 /* styles for the "add to cart" button */ 
 
 #classic-menu-cart-button {
+
+    background-color: #bba1d0; 
+    color: #292c4c;  
     margin: 5px 0px 0px 10px; 
+
+
 }
