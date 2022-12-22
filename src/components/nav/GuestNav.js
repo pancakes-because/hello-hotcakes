@@ -17,7 +17,7 @@ export const GuestNav = () => {
                 <Link className="navbar__link" to="/home">Home</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/menu">Menu</Link>
+                <Link className="navbar__link" to="/menu">Classic Menu</Link>
             </li>
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/custom">Custom Menu</Link>

@@ -1,21 +1,68 @@
 
+/* styles for the container holding the navbar options */ 
+
 .navbar {
     display: flex;
     flex-wrap: nowrap;
     text-align: center; 
     /* justify-content: left; */
 
+    margin: 0px; 
+    padding-top: 16px; 
+    padding-bottom: 16px; 
+    /* padding-left: 0px;  */
+    
+    background-color: #292c4c;
+    border-bottom: 1px solid black; 
+
     /* border: 1px dotted blue;  */
 }
+
+/* styles for each each individual option in the navbar (home, classic menu, custom menu, etc.) */ 
 
 .navbar__item {
     flex-basis: 30%;
     list-style-type: none;
 }
 
+/* styles for each link in the navbar  */ 
+
 .navbar__link {
     text-decoration: none; 
 }
+
+/* styles for link colors in different states */ 
+/* reminder: a:hover MUST come after a:link and a:visited */ 
+/* reminder: a:active MUST come after a:hover */
+
+/* gives a link the following color before it has been clicked */ 
+
+a:link {
+    color: #f5c46d; 
+    text-shadow: 0px 0px #944c0f; 
+}
+
+/* gives a link the following color after it has been clicked */ 
+
+a:visited {
+    color: #944c0f; 
+    text-shadow: 0px 0px #f5c46d; 
+}
+
+/* gives a link the following color when the user's mouse hovers over the link */ 
+
+a:hover {
+    color: #8e6ca4; 
+    text-shadow: 0px 0px #292c4c; 
+}
+
+a:active {
+    color: #bba1d0; 
+    text-shadow: 0px 0px #292c4c; 
+}
+
+
+/* styles for the "logout" link */ 
 
 .navbar__logout {
     margin-left: auto; 

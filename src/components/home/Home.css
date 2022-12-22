@@ -8,37 +8,40 @@
 /* got different options for hero/banner gifs; commented these out for ease of switching them out later */ 
 
 .home_title_and_tagline_container {
+    
     display: flex; 
     flex-direction: column;  
     justify-content: center; 
     text-align: center; 
 
-    margin: 15px 0px 0px 0px; 
-    padding: 170px 0px 170px 0px; 
-
-    color: white; 
-    background-size: cover; 
+    margin: 0px 0px 0px 0px; 
+    padding: 212px 0px 212px 0px; 
 
     /* background-image: url("https://media.giphy.com/media/uLQcLwZMcrz5m/giphy.gif");  */
     background-image: url("https://media.giphy.com/media/ACLcxEifdoZyw/giphy-downsized-large.gif");
     /* background-image: url("https://media.giphy.com/media/LqgRRxT5e0E7XcbcMC/giphy.gif");  */
     /* background-image: url("https://media.giphy.com/media/z2hfj4oiX5H4k/giphy.gif");  */
-   
-    /* border: 1px dotted blue;  */
+    background-size: cover; 
+
 }
 
 /* styles for the title, "Hello, Hotcakes!" */ 
 
 .home__title {
+    color: #f5c46d; 
     font-size: 100px;
+    text-shadow: 0px 0px 4px #944c0f; 
+
     margin-bottom: 0px; 
     
-    text-shadow: 0px 0px 4px black;
 }
 
+/* styles for the tagline, "the delicious taste..." */ 
+
 .tagline {
-    text-shadow: 0px 0px 4px black;
+    color: #f5c46d; 
     font-size: 18px; 
+    text-shadow: 0px 0px 4px #944c0f;
 }
 
 /* styles for the footer holding the address, email, and phone information */ 
@@ -46,22 +49,21 @@
 /* the footer container is using flexbox and contains the content */ 
 
 .footer_container {
-    /* display: flex; */
-    /* flex-direction: row;  */
-    /* justify-content: space-around; */
-    /* align-items: center;  */
-
     display: flex;
     flex-wrap: nowrap;
     text-align: center;
 
-    margin-left: 0px; 
-    margin-right: 0px;
-    /* border: 1px dotted blue;  */
+    margin: 0px; 
+    padding: 16px 0px 16px 0px; 
+
+    border-top: 1px solid #292c4c; 
+    
 }
 
 .footer_item {
     flex-basis: 35%;
     list-style-type: none;
+    color: #d57a17; 
+    text-shadow: #944c0f; 
 }
 
