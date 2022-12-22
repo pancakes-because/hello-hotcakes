@@ -13,7 +13,7 @@ export const Home = () => {
         <ul className="footer_container">
 
             <li className="footer_item">
-                624 Maude Lane, Conway, KS, 69958
+                222 Bavarian Way, Gatlinburg, TN, 37738
             </li>
             <li className="footer_item">
                 hellohotcakes@gmail.com

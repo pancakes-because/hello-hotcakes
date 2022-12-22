@@ -30,7 +30,7 @@
 .home__title {
     color: #f5c46d; 
     font-size: 100px;
-    text-shadow: 0px 0px 4px #944c0f; 
+    text-shadow: 1px 1px 4px #944c0f; 
 
     margin-bottom: 0px; 
     
@@ -41,7 +41,7 @@
 .tagline {
     color: #f5c46d; 
     font-size: 18px; 
-    text-shadow: 0px 0px 4px #944c0f;
+    text-shadow: 1px 1px 4px #944c0f;
 }
 
 /* styles for the footer holding the address, email, and phone information */ 
@@ -61,9 +61,10 @@
 }
 
 .footer_item {
+    color: #d57a17; 
+    text-shadow: 0px 0px 0px #944c0f; 
+    
     flex-basis: 35%;
     list-style-type: none;
-    color: #d57a17; 
-    text-shadow: #944c0f; 
 }
 
