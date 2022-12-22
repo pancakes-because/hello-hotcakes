@@ -39,4 +39,18 @@
     width: 25px; 
 } 
 
+/* styles for the group of radio input fields */ 
+/* using flexbox, centers the label and input fields */ 
+/* seems to affect the SecretMenu.js styling also! */ 
 
+/* fieldset {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+} */
+
+/* styles for the "add to cart" button */ 
+
+#classic-menu-cart-button {
+    margin: 5px 0px 0px 10px; 
+}

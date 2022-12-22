@@ -121,8 +121,8 @@ export const CustomMenu = () => {
             </div>
 
             <div className="form_fields_container">
-                <div className="label_and_input_container">
-                    <h3 className="custom_label">Batters</h3>
+                <div className="custom_label_and_input_container">
+                    <h3 className="custom_label_batters">Batters:</h3>
                     <fieldset>
                         <div className="form-group">
                             <select name="batters" id="batters"
@@ -141,8 +141,8 @@ export const CustomMenu = () => {
                     </fieldset>
                 </div>
 
-                <div className="label_and_input_container">
-                    <h3 className="custom_label">Fillings</h3>
+                <div className="custom_label_and_input_container">
+                    <h3 className="custom_label_fillings">Fillings:</h3>
                     <fieldset>
                         <div className="form-group">
                             <select name="fillings" id="fillings"
@@ -165,8 +165,8 @@ export const CustomMenu = () => {
                 {/* new stretch goal: make it so that more than one topping can be added to a pancake order  */}
                 {/* use promise.all to make it so that you can have more than one topping for a custom pancake order  */}
 
-                <div className="label_and_input_container">
-                    <h3 className="custom_label">Toppings</h3>
+                <div className="custom_label_and_input_container">
+                    <h3 className="custom_label_toppings">Toppings:</h3>
                     <fieldset>
                         <div className="form-group">
                             <select name="toppings" id="toppings"
@@ -185,8 +185,8 @@ export const CustomMenu = () => {
                     </fieldset>
                 </div>
 
-                <div className="label_and_input_container">
-                    <h3 className="custom_label">Stack Sizes</h3>
+                <div className="custom_label_and_input_container">
+                    <h3 className="custom_label_stack_sizes">Stack Sizes:</h3>
                     <fieldset>
                         <div className="form-group">
                             <select name="stack_sizes" id="stack_sizes"
@@ -208,7 +208,7 @@ export const CustomMenu = () => {
 
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="btn btn-primary">
+                className="btn btn-primary" id="custom-menu-cart-button">
                 Add to cart
             </button>
 

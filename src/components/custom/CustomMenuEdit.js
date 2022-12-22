@@ -125,8 +125,8 @@ export const CustomMenuEdit = () => {
             </div>
 
             <div className="form_fields_container">
-                <div className="label_and_input_container">
-                    <h3 className="custom_label">Batters</h3>
+                <div className="custom_label_and_input_container">
+                    <h3 className="custom_label_batters">Batters:</h3>
                     <fieldset>
                         <div className="form-group">
                             <select name="batters" id="batters" value={customMenuItemChoices.batterId}
@@ -145,8 +145,8 @@ export const CustomMenuEdit = () => {
                     </fieldset>
                 </div>
 
-                <div className="label_and_input_container">
-                    <h3 className="custom_label">Fillings</h3>
+                <div className="custom_label_and_input_container">
+                    <h3 className="custom_label_fillings">Fillings:</h3>
                     <fieldset>
                         <div className="form-group">
                             <select name="fillings" id="fillings" value={customMenuItemChoices.fillingId}
@@ -165,8 +165,8 @@ export const CustomMenuEdit = () => {
                     </fieldset>
                 </div>
 
-                <div className="label_and_input_container">
-                    <h3 className="custom_label">Toppings</h3>
+                <div className="custom_label_and_input_container">
+                    <h3 className="custom_label_toppings">Toppings:</h3>
                     <fieldset>
                         <div className="form-group">
                             <select name="toppings" id="toppings" value={customMenuItemChoices.toppingId}
@@ -185,8 +185,8 @@ export const CustomMenuEdit = () => {
                     </fieldset>
                 </div>
 
-                <div className="label_and_input_container">
-                    <h3 className="custom_label">Stack Sizes</h3>
+                <div className="custom_label_and_input_container">
+                    <h3 className="custom_label_stack_sizes">Stack Sizes:</h3>
                     <fieldset>
                         <div className="form-group">
                             <select name="stack_sizes" id="stack_sizes" value={customMenuItemChoices.stackSizeId}

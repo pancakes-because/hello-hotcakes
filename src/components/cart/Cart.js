@@ -192,7 +192,7 @@ export const Cart = () => {
                                                     //     console.log(customMenuOrdersArray[0].customMenuOrders[0].cartId)
                                                     // })
                                                     .then(filteredArray => {
-                                                        console.log(filteredArray)
+                                                        // console.log(filteredArray)
                                                         // setCustomMenuOrders(filteredArray)
                                                         setCustomMenuOrders([])
                                                     })
