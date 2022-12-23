@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import "./SecretMenu.css" 
+import "./SecretMenu.css"  
 
 export const SecretMenuEdit = () => {
 

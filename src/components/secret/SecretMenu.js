@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import "./SecretMenu.css"
+import "./SecretMenu.css" 
 
 export const SecretMenu = () => {
 

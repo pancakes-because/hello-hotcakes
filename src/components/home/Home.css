@@ -1,4 +1,4 @@
-/* styles for the Home page */ 
+/* styles for the Home page */   
 
 /* styles for the container holding the title and tagline */ 
 /* styles were meant to help center the title and tagline in the middle of the page */ 
@@ -7,7 +7,7 @@
 /* the border is for testing purposes just to see how the space is */ 
 /* got different options for hero/banner gifs; commented these out for ease of switching them out later */ 
 
-.home_title_and_tagline_container {
+.home_title_and_tagline_container { 
     
     display: flex; 
     flex-direction: column;  
