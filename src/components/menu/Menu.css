@@ -9,7 +9,7 @@
 /* styles for the title, "classic menu" */ 
 
 .classic__title {
-
+    font-size: 65px ; 
     color: #f5c46d; 
     text-shadow: 1px 1px 0px #944c0f; 
 
@@ -24,16 +24,25 @@
 /* activated flexbox for the label and input divs to line them side by side */ 
 /* align-items helps the text looks like its level with the radio input in the center */ 
 
-.label_and_input_container {
+.classic_menu_label_and_input_container {
+    
     display: flex; 
     align-items: center;
+    margin: 15px 0px 15px 0px; 
 
+    font-size: 25px; 
     color: #d57a17; 
     text-shadow: 0px 0px 0px  #944c0f;  
 }
 
 /* styles for the radio button - not the label */ 
 /* this was size the radio input and make it smaller */ 
+
+.classic-menu-form-group {
+    display: flex; 
+    flex-direction: column; 
+    margin: 0px 0px 10px 0px; 
+}
 
 /* was using input.form-control to control the alignment of the radio input and label*/ 
 /* turns out that this affects the input fields on the login.js and register.js components */ 
@@ -46,23 +55,17 @@
     width: 25px; 
 } 
 
-/* styles for the group of radio input fields */ 
-/* using flexbox, centers the label and input fields */ 
-/* seems to affect the SecretMenu.js styling also! */ 
-
-/* fieldset {
-    display: flex; 
-    flex-direction: column;
-    align-items: center; 
-} */
-
 /* styles for the "add to cart" button */ 
 
-#classic-menu-cart-button {
+#classic-menu-cart-button { 
+    color: #292c4c;  
+    font-size: 25px; 
+    font-weight: bold; 
 
     background-color: #bba1d0; 
-    color: #292c4c;  
-    margin: 5px 0px 0px 10px; 
-
-
+    border: 1px solid #8e6ca4; 
+    border-radius: 3px 3px 3px 3px; 
+    
+    margin: 5px 0px 15px 10px;
+    padding: 5px 10px; 
 }

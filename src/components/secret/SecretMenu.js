@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import "./SecretMenu.css"
+import "./SecretMenu.css" 
 
 export const SecretMenu = () => {
 
@@ -65,12 +65,12 @@ export const SecretMenu = () => {
         <form className="secret_menu">
             <h1 className="secret__title">Secret Menu</h1>
             <fieldset>
-                <div className="form-group">
+                <div className="secret-menu-form-group">
 
                     {secretMenuItems.map(secretMenuItem => {
 
                         return <>
-                            <div className="label_and_input_container">
+                            <div className="secret_menu_label_and_input_container">
                                 <input
                                     required autoFocus
                                     className="form-control"

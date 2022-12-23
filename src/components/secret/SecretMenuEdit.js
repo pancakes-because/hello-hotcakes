@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import "./SecretMenu.css" 
+import "./SecretMenu.css"  
 
 export const SecretMenuEdit = () => {
 
@@ -68,12 +68,12 @@ export const SecretMenuEdit = () => {
         <form className="secret_menu">
             <h2 className="secret__title">Secret Menu</h2>
             <fieldset>
-                <div className="form-group">
+                <div className="secret-menu-form-group">
 
                     {secretMenuItems.map(secretMenuItem => {
 
                         return <>
-                            <div className="label_and_input_container">
+                            <div className="secret_menu_label_and_input_container">
                                 <input
                                     checked={secretMenuItemChoices.secretMenuItemId === secretMenuItem.id ? true : false}
                                     required autoFocus
