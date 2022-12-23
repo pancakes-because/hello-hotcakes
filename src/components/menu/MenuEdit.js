@@ -79,12 +79,12 @@ export const MenuEdit = () => {
         <form className="classic_menu">
             <h2 className="classic__title">Classic Menu</h2>
             <fieldset>
-                <div className="form-group">
+                <div className="classic-menu-form-group">
 
                     {menuItems.map(menuItem => {
 
                         return <>
-                            <div className="label_and_input_container">
+                            <div className="classic_menu_label_and_input_container">
                                 <input
                                     checked={menuItemChoices.menuItemId === menuItem.id ? true : false}
                                     required autoFocus
