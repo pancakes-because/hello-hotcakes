@@ -19,19 +19,19 @@ export const MemberNav = () => {
         <ul className="navbar">
 
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/home">Home</Link>
+                <Link className="navbar__link" to="/home">HOME</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/menu">Classic Menu</Link>
+                <Link className="navbar__link" to="/menu">CLASSIC MENU</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/secret">Secret Menu</Link>
+                <Link className="navbar__link" to="/secret">SECRET MENU</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/custom">Custom Menu</Link>
+                <Link className="navbar__link" to="/custom">CUSTOM MENU</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/cart">Cart</Link>
+                <Link className="navbar__link" to="/cart">CART</Link>
             </li>
             {
                 localStorage.getItem("hotcakes_user")
@@ -45,7 +45,7 @@ export const MemberNav = () => {
                                     localStorage.removeItem("cart")
                                     navigate("/", { replace: true })
                                 })
-                        }}>Logout</Link>
+                        }}>LOGOUT</Link>
                     </li>
                     : ""
             }

@@ -95,7 +95,7 @@ export const SecretMenu = () => {
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary" id="secret-menu-cart-button">
-                Add to cart
+                ADD TO CART
             </button>
         </form>
     </>

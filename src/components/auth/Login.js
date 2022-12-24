@@ -75,13 +75,13 @@ export const Login = () => {
                     </fieldset>
                     <fieldset>
                         <button type="submit">
-                            Sign in
+                            SIGN IN
                         </button>
                     </fieldset>
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link to="/register">NOT A MEMBER YET?</Link>
             </section>
         </main>
     )
