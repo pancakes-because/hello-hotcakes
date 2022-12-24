@@ -5,3 +5,16 @@
 .cart_page {
     padding: 0 3rem;
 }
+
+#cart-checkout-button {
+    color: #944c0f;  
+    text-shadow: 1px 1px 1px #d57a17; 
+    font-size: 25px;
+
+    background-color: #f5c46d; 
+    border: 1px solid #944c0f; 
+    border-radius: 3px 3px 3px 3px; 
+    
+    margin: 5px 0px 15px 0px;
+    padding: 5px 10px; 
+}
