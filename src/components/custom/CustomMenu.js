@@ -123,7 +123,7 @@ export const CustomMenu = () => {
             <div className="form_fields_container">
                 <div className="custom_label_and_input_container">
                     <h3 className="custom_label_batters">Batters:</h3>
-                    <fieldset>
+                    <fieldset id="custom-menu-input">
                         <div className="custom-menu-form-group">
                             <select name="batters" id="batters"
                                 onChange={
@@ -144,7 +144,7 @@ export const CustomMenu = () => {
                 <div className="custom_label_and_input_container">
                     <h3 className="custom_label_fillings">Fillings:</h3>
                     <fieldset>
-                        <div className="form-group">
+                        <div className="custom-menu-form-group">
                             <select name="fillings" id="fillings"
                                 onChange={
                                     (evt) => {
@@ -168,7 +168,7 @@ export const CustomMenu = () => {
                 <div className="custom_label_and_input_container">
                     <h3 className="custom_label_toppings">Toppings:</h3>
                     <fieldset>
-                        <div className="form-group">
+                        <div className="custom-menu-form-group">
                             <select name="toppings" id="toppings"
                                 onChange={
                                     (evt) => {
@@ -188,7 +188,7 @@ export const CustomMenu = () => {
                 <div className="custom_label_and_input_container">
                     <h3 className="custom_label_stack_sizes">Stack Sizes:</h3>
                     <fieldset>
-                        <div className="form-group">
+                        <div className="custom-menu-form-group">
                             <select name="stack_sizes" id="stack_sizes"
                                 onChange={
                                     (evt) => {
