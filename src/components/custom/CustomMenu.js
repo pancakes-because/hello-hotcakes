@@ -124,7 +124,7 @@ export const CustomMenu = () => {
                 <div className="custom_label_and_input_container">
                     <h3 className="custom_label_batters">Batters:</h3>
                     <fieldset>
-                        <div className="form-group">
+                        <div className="custom-menu-form-group">
                             <select name="batters" id="batters"
                                 onChange={
                                     (evt) => {
@@ -209,7 +209,7 @@ export const CustomMenu = () => {
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary" id="custom-menu-cart-button">
-                Add to cart
+                ADD TO CART
             </button>
 
 

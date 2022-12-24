@@ -128,7 +128,7 @@ export const CustomMenuEdit = () => {
                 <div className="custom_label_and_input_container">
                     <h3 className="custom_label_batters">Batters:</h3>
                     <fieldset>
-                        <div className="form-group">
+                        <div className="custom-menu-form-group">
                             <select name="batters" id="batters" value={customMenuItemChoices.batterId}
                                 onChange={
                                     (evt) => {
