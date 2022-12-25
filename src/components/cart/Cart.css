@@ -28,13 +28,30 @@
     font-size: 20px; 
 }
 
-/* styles for the menu order names */ 
+/* styles for the classic menu and secret menu order names */ 
 
 .cart-order-name {
     color: #944c0f;
     font-size: 25px; 
     font-weight: bold;
 }
+
+/* styles for the CONTAINER of the custom menu order names */ 
+
+.custom-order-name-container {
+    display: flex; 
+}
+
+/* styles for the custom menu order names */ 
+
+.custom-order-name {
+    color: #944c0f;
+    font-size: 25px; 
+    font-weight: bold;
+
+    margin: 0px 10px 10px 0px; 
+}
+
 
 /* styles for the "Edit Order" buttons */ 
 
