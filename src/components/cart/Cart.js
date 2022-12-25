@@ -75,21 +75,21 @@ export const Cart = () => {
     return <>
 
         <div className="cart_page">
-            <h1>Cart</h1>
+            <h1 className="cart__title">Cart</h1>
 
-            <h2>Classic Menu Orders</h2>
+            <h2 className="cart-menu-heading">Classic Menu Orders</h2>
 
             {
                 menuOrders.length ?
                     menuOrders.map(menuOrder => {
                         return (
                             <div>
-                                <h3>Order {menuOrder.id}</h3>
-                                <p>{menuOrder.menuItem?.name}</p>
+                                <h3 className="order-heading">Order {menuOrder.id}</h3>
+                                <p className="cart-order-name">{menuOrder.menuItem?.name}</p>
                                 <button
                                     onClick={(clickEvent) => navigate(`/menu/${menuOrder.id}/edit`)}
-                                    className="btn btn-primary">
-                                    Edit Order
+                                    className="cart-edit-button">
+                                    EDIT ORDER
                                 </button>
 
                                 <button
@@ -106,8 +106,8 @@ export const Cart = () => {
                                                     })
                                             })
                                     }}
-                                    className="btn btn-primary">
-                                    Delete Order
+                                    className="cart-delete-button">
+                                    DELETE ORDER
                                 </button>
                             </div>
                         )
@@ -116,18 +116,18 @@ export const Cart = () => {
             }
 
 
-            {hotcakesUserObject.member ? <h2>Secret Menu Orders</h2> : ""}
+            {hotcakesUserObject.member ? <h2 className="cart-menu-heading">Secret Menu Orders</h2> : ""}
 
             {
                 secretMenuOrders.length ?
                     secretMenuOrders.map(secretMenuOrder => {
                         return (
                             <div>
-                                <h3>Order {secretMenuOrder.id}</h3>
-                                <p>{secretMenuOrder.secretMenuItem?.name}</p>
+                                <h3 className="order-heading">Order {secretMenuOrder.id}</h3>
+                                <p className="cart-order-name">{secretMenuOrder.secretMenuItem?.name}</p>
                                 <button
                                     onClick={(clickEvent) => navigate(`/secret/${secretMenuOrder.id}/edit`)}
-                                    className="btn btn-primary">
+                                    className="cart-edit-button">
                                     Edit Order
                                 </button>
                                 <button
@@ -144,7 +144,7 @@ export const Cart = () => {
                                                     })
                                             })
                                     }}
-                                    className="btn btn-primary">
+                                    className="cart-delete-button">
                                     Delete Order
                                 </button>
                             </div>
@@ -153,7 +153,7 @@ export const Cart = () => {
                     : ""
             }
 
-            <h2>Custom Menu Orders</h2>
+            <h2 className="cart-menu-heading">Custom Menu Orders</h2>
 
             {
                 customMenuOrders.length ?
@@ -210,7 +210,7 @@ export const Cart = () => {
                 <button
                     onClick={(clickEvent) => navigate(`/checkout`)}
                     className="btn btn-primary" id="cart-checkout-button">
-                    Go to Checkout
+                    GO TO CHECKOUT
                 </button>
             </div>
         </div>

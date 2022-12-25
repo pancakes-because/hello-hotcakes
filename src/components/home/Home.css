@@ -30,8 +30,8 @@
 
 .home__title {
     color: #f5c46d; 
-    font-size: 120px;
     text-shadow: 1px 1px 4px #944c0f; 
+    font-size: 120px;
     
     margin-bottom: 0px; 
     
@@ -40,10 +40,10 @@
 /* styles for the tagline, "the delicious taste..." */ 
 
 .tagline {
-    color: #f5c46d; 
+    color: #d57a17;  
     font-size: 20px; 
     font-weight: bold; 
-    text-shadow: 1px 1px 4px #944c0f;
+    text-shadow: 1px 1px 4px #292c4c;
 
     margin-top: 5px; 
 }
