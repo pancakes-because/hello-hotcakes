@@ -94,7 +94,7 @@ export const Menu = () => {
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary" id="classic-menu-cart-button">
-                ADD TO CART
+                Add to cart
             </button>
         </form>
     </>

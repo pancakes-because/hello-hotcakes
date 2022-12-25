@@ -109,7 +109,7 @@ export const MenuEdit = () => {
             </fieldset>
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="btn btn-primary">
+                className="btn btn-primary" id="classic-menu-save-button">
                 Save Edit
             </button>
         </form>
