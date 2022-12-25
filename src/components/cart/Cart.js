@@ -128,7 +128,7 @@ export const Cart = () => {
                                 <button
                                     onClick={(clickEvent) => navigate(`/secret/${secretMenuOrder.id}/edit`)}
                                     className="cart-edit-button">
-                                    Edit Order
+                                    EDIT ORDER
                                 </button>
                                 <button
                                     onClick={(clickEvent) => {
@@ -145,7 +145,7 @@ export const Cart = () => {
                                             })
                                     }}
                                     className="cart-delete-button">
-                                    Delete Order
+                                    DELETE ORDER
                                 </button>
                             </div>
                         )
@@ -160,15 +160,17 @@ export const Cart = () => {
                     customMenuOrders.map(customMenuOrder => {
                         return (
                             <div>
-                                <h3>Order {customMenuOrder.id}</h3>
-                                <p>{customMenuOrder.batter?.name}</p>
-                                <p>{customMenuOrder.filling?.name}</p>
-                                <p>{customMenuOrder.topping?.name}</p>
-                                <p>{customMenuOrder.stackSize?.stackSize}</p>
+                                <h3 className="order-heading">Order {customMenuOrder.id}</h3>
+                                <div className="custom-order-name-container">
+                                    <p className="custom-order-name">{customMenuOrder.batter?.name} batter,</p>
+                                    <p className="custom-order-name">{customMenuOrder.filling?.name} filling,</p>
+                                    <p className="custom-order-name">{customMenuOrder.topping?.name} topping,</p>
+                                    <p className="custom-order-name">{customMenuOrder.stackSize?.stackSize}</p>
+                                </div>
                                 <button
                                     onClick={(clickEvent) => navigate(`/custom/${customMenuOrder.id}/edit`)}
-                                    className="btn btn-primary">
-                                    Edit Order
+                                    className="cart-edit-button">
+                                    EDIT ORDER
                                 </button>
                                 <button
                                     onClick={(clickEvent) => {
@@ -198,8 +200,8 @@ export const Cart = () => {
                                                     })
                                             })
                                     }}
-                                    className="btn btn-primary">
-                                    Delete Order
+                                    className="cart-delete-button">
+                                    DELETE ORDER
                                 </button>
                             </div>)
                     })
