@@ -10,8 +10,8 @@ export const Checkout = () => {
         <div className="checkout_page">
 
             <h1 className="checkout__title">Checkout</h1>
-            <p className="instructions">You're close to pancake paradise! </p>
-            <p className="instructions">Please click the button below to complete payment, and then we'll start making your stack of heavenly hotcakes.</p>
+            <p className="checkout-instructions">You're close to pancake paradise! </p>
+            <p className="checkout-instructions">Please click the button below to complete payment, and then we'll start making your stack of heavenly hotcakes.</p>
 
             <div className="paypal_image">
                 <img src={PayPal} alt="PayPal button" />

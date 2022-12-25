@@ -7,10 +7,23 @@
 }
 
 .checkout__title {
+    font-size: 65px ; 
+    color: #bba1d0; 
+    text-shadow: 1px 1px 0px #292c4c; 
+
     margin-top: 35px; 
-    margin-left: 10px; 
     margin-bottom: 0px; 
     padding: 0px; 
+}
+
+.checkout-instructions {
+    color: #292c4c;
+    font-size: 20px;
+    font-weight: bold;
+
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 0px;
 }
 
 .paypal_image {

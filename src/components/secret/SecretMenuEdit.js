@@ -98,7 +98,7 @@ export const SecretMenuEdit = () => {
             </fieldset>
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="btn btn-primary" id="secret-menu-cart-button">
+                className="btn btn-primary" id="secret-menu-save-button">
                 Save Edit
             </button>
         </form>
