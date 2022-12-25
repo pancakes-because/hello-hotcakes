@@ -1,7 +1,7 @@
 
 import React from "react"
 import PayPal from "/Users/theladytropical/workspace/hello-hotcakes/src/components/checkout/checkout_imgs/PayPal.png"
-import "./Checkout.css"
+import "./Checkout.css" 
 
 export const Checkout = () => {
 

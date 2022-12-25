@@ -3,7 +3,7 @@
 /* adds space on the outside borders, so the text isn't touch the browser sides */ 
 
 .checkout_page {
-    padding: 0 3rem;
+    padding: 0 3rem; 
 }
 
 .checkout__title {
