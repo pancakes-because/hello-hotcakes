@@ -6,6 +6,66 @@
     padding: 0 3rem;
 }
 
+.cart__title {
+    font-size: 65px ; 
+    color: #f5c46d; 
+    text-shadow: 1px 1px 0px #944c0f; 
+
+    margin-top: 35px; 
+    margin-bottom: 0px; 
+    padding: 0px; 
+}
+
+.cart-menu-heading {
+    color: #d57a17;
+    
+}
+
+/* styles for the "Order" heading */ 
+
+.order-heading {
+    color: #944c0f; 
+    font-size: 20px; 
+}
+
+/* styles for the menu order names */ 
+
+.cart-order-name {
+    color: #944c0f;
+    font-size: 25px; 
+    font-weight: bold;
+}
+
+/* styles for the "Edit Order" buttons */ 
+
+.cart-edit-button {
+    color: #bba1d0;  
+    text-shadow: 1px 1px 1px #8e6ca4;
+    font-size: 20px;
+
+    background-color: #292c4c; 
+    border: 1px solid #8e6ca4; 
+    border-radius: 3px 3px 3px 3px; 
+
+    margin: 5px 10px 5px 0px; 
+}
+
+/* styles for the "Delete Order" buttons */ 
+
+.cart-delete-button {
+    color: #bba1d0;  
+    text-shadow: 1px 1px 1px #8e6ca4;
+    font-size: 20px;
+
+    background-color: #292c4c; 
+    border: 1px solid #8e6ca4; 
+    border-radius: 3px 3px 3px 3px; 
+
+    margin: 5px 10px 5x 0px; 
+}
+
+/* styles for the "GO TO CHECKOUT" BUTTON */ 
+
 #cart-checkout-button {
     color: #944c0f;  
     text-shadow: 1px 1px 1px #d57a17; 

@@ -105,7 +105,7 @@ export const Register = (props) => {
                     <label htmlFor="email"> Yes, I want to be a member! </label>
                 </fieldset>
                 <fieldset>
-                    <button type="submit">REGISTER</button>
+                    <button type="submit" className="user-button">REGISTER</button>
                 </fieldset>
             </form>
         </main>
