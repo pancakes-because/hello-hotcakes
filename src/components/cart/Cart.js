@@ -89,7 +89,7 @@ export const Cart = () => {
                                 <button
                                     onClick={(clickEvent) => navigate(`/menu/${menuOrder.id}/edit`)}
                                     className="cart-edit-button">
-                                    EDIT ORDER
+                                    Edit Order
                                 </button>
 
                                 <button
@@ -107,7 +107,7 @@ export const Cart = () => {
                                             })
                                     }}
                                     className="cart-delete-button">
-                                    DELETE ORDER
+                                    Delete Order
                                 </button>
                             </div>
                         )
@@ -128,7 +128,7 @@ export const Cart = () => {
                                 <button
                                     onClick={(clickEvent) => navigate(`/secret/${secretMenuOrder.id}/edit`)}
                                     className="cart-edit-button">
-                                    EDIT ORDER
+                                    Edit Order
                                 </button>
                                 <button
                                     onClick={(clickEvent) => {
@@ -145,7 +145,7 @@ export const Cart = () => {
                                             })
                                     }}
                                     className="cart-delete-button">
-                                    DELETE ORDER
+                                    Delete Order
                                 </button>
                             </div>
                         )
@@ -170,7 +170,7 @@ export const Cart = () => {
                                 <button
                                     onClick={(clickEvent) => navigate(`/custom/${customMenuOrder.id}/edit`)}
                                     className="cart-edit-button">
-                                    EDIT ORDER
+                                    Edit Order
                                 </button>
                                 <button
                                     onClick={(clickEvent) => {
@@ -201,7 +201,7 @@ export const Cart = () => {
                                             })
                                     }}
                                     className="cart-delete-button">
-                                    DELETE ORDER
+                                    Delete Order
                                 </button>
                             </div>)
                     })
@@ -212,7 +212,7 @@ export const Cart = () => {
                 <button
                     onClick={(clickEvent) => navigate(`/checkout`)}
                     className="btn btn-primary" id="cart-checkout-button">
-                    GO TO CHECKOUT
+                    Go to checkout
                 </button>
             </div>
         </div>

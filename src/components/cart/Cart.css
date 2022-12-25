@@ -18,6 +18,7 @@
 
 .cart-menu-heading {
     color: #d57a17;
+    /* text-shadow: 1px 1px 0px #292c4c; */
     
 }
 
@@ -26,6 +27,7 @@
 .order-heading {
     color: #944c0f; 
     font-size: 20px; 
+    margin-bottom: 10px; 
 }
 
 /* styles for the classic menu and secret menu order names */ 
@@ -34,6 +36,8 @@
     color: #944c0f;
     font-size: 25px; 
     font-weight: bold;
+
+    margin: 0px 10px 10px 0px; 
 }
 
 /* styles for the CONTAINER of the custom menu order names */ 
@@ -64,7 +68,7 @@
     border: 1px solid #8e6ca4; 
     border-radius: 3px 3px 3px 3px; 
 
-    margin: 5px 10px 5px 0px; 
+    margin: 5px 10px 15px 0px; 
 }
 
 /* styles for the "Delete Order" buttons */ 
@@ -78,7 +82,7 @@
     border: 1px solid #8e6ca4; 
     border-radius: 3px 3px 3px 3px; 
 
-    margin: 5px 10px 5x 0px; 
+    margin: 5px 10px 15x 0px; 
 }
 
 /* styles for the "GO TO CHECKOUT" BUTTON */ 
@@ -92,6 +96,6 @@
     border: 1px solid #944c0f; 
     border-radius: 3px 3px 3px 3px; 
     
-    margin: 5px 0px 15px 0px;
+    margin: 20px 0px 15px 0px;
     padding: 5px 10px; 
 }

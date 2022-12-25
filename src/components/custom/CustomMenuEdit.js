@@ -127,7 +127,7 @@ export const CustomMenuEdit = () => {
             <div className="form_fields_container">
                 <div className="custom_label_and_input_container">
                     <h3 className="custom_label_batters">Batters:</h3>
-                    <fieldset>
+                    <fieldset id="custom-menu-input">
                         <div className="custom-menu-form-group">
                             <select name="batters" id="batters" value={customMenuItemChoices.batterId}
                                 onChange={
@@ -148,7 +148,7 @@ export const CustomMenuEdit = () => {
                 <div className="custom_label_and_input_container">
                     <h3 className="custom_label_fillings">Fillings:</h3>
                     <fieldset>
-                        <div className="form-group">
+                        <div className="custom-menu-form-group">
                             <select name="fillings" id="fillings" value={customMenuItemChoices.fillingId}
                                 onChange={
                                     (evt) => {
@@ -168,7 +168,7 @@ export const CustomMenuEdit = () => {
                 <div className="custom_label_and_input_container">
                     <h3 className="custom_label_toppings">Toppings:</h3>
                     <fieldset>
-                        <div className="form-group">
+                        <div className="custom-menu-form-group">
                             <select name="toppings" id="toppings" value={customMenuItemChoices.toppingId}
                                 onChange={
                                     (evt) => {
@@ -188,7 +188,7 @@ export const CustomMenuEdit = () => {
                 <div className="custom_label_and_input_container">
                     <h3 className="custom_label_stack_sizes">Stack Sizes:</h3>
                     <fieldset>
-                        <div className="form-group">
+                        <div className="custom-menu-form-group">
                             <select name="stack_sizes" id="stack_sizes" value={customMenuItemChoices.stackSizeId}
                                 onChange={
                                     (evt) => {
@@ -208,7 +208,7 @@ export const CustomMenuEdit = () => {
 
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="btn btn-primary">
+                className="btn btn-primary" id="custom-menu-save-button">
                 Save Edit
             </button>
         </form>
