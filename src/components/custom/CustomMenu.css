@@ -21,7 +21,6 @@
 /* styles for the p tag that says, "Build your own stack of pancakes!" */
 
 .custom_instructions {
-
     color: #d57a17;
     font-size: 20px;
     font-weight: bold;
@@ -55,9 +54,7 @@
 
 .custom_label_batters {
     color: #944c0f;
-    font-size: 25px; 
-    /* font-weight: bold; */
-    /* font-family: 'Chivo', sans-serif; */
+    font-size: 25px;
     
     margin-right: 98px;
     margin-bottom: 0px;
@@ -110,23 +107,23 @@ select {
 
     background-color: #292c4c; 
     border: 1px solid #8e6ca4; 
-    border-radius: 3px 3px 3px 3px; 
+    border-radius: 30px 30px 30px 30px; 
     
     margin: 5px 0px 15px 10px;
-    padding: 5px 10px; 
+    padding: 5px 20px; 
 }
 
 /* styles for the "save edit" button */ 
 
 #custom-menu-save-button {
     color: #bba1d0;  
-    text-shadow: 1px 1px 1px #8e6ca4;
+    text-shadow: 1px 1px 1px #8e6ca4; 
     font-size: 25px;
 
     background-color: #292c4c; 
     border: 1px solid #8e6ca4; 
-    border-radius: 3px 3px 3px 3px; 
+    border-radius: 30px 30px 30px 30px; 
     
     margin: 5px 0px 15px 10px;
-    padding: 5px 10px; 
+    padding: 5px 20px; 
 }

@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react"
-import "./SecretMenu.css" 
+import "./SecretMenu.css"  
 
 export const SecretMenu = () => {
 
@@ -94,7 +94,7 @@ export const SecretMenu = () => {
             </fieldset>
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="btn btn-primary" id="secret-menu-save-button">
+                className="btn btn-primary" id="secret-menu-cart-button">
                 Add To Cart
             </button>
         </form>

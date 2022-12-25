@@ -18,15 +18,16 @@
 
 .cart-menu-heading {
     color: #d57a17;
-    /* text-shadow: 1px 1px 0px #292c4c; */
-    
+    text-shadow: 0px 0px 0px #944c0f; 
 }
 
 /* styles for the "Order" heading */ 
 
 .order-heading {
     color: #944c0f; 
+    text-shadow: 0px 0px 0px #292c4c; 
     font-size: 20px; 
+
     margin-bottom: 10px; 
 }
 
@@ -66,9 +67,10 @@
 
     background-color: #292c4c; 
     border: 1px solid #8e6ca4; 
-    border-radius: 3px 3px 3px 3px; 
+    border-radius: 30px 30px 30px 30px; 
 
     margin: 5px 10px 15px 0px; 
+    padding: 5px 15px; 
 }
 
 /* styles for the "Delete Order" buttons */ 
@@ -80,22 +82,25 @@
 
     background-color: #292c4c; 
     border: 1px solid #8e6ca4; 
-    border-radius: 3px 3px 3px 3px; 
+    border-radius: 30px 30px 30px 30px; 
 
-    margin: 5px 10px 15x 0px; 
+    margin: 5px 10px 15px 0px; 
+    padding: 5px 15px; 
 }
 
 /* styles for the "GO TO CHECKOUT" BUTTON */ 
 
-#cart-checkout-button {
+#cart-checkout-button { 
     color: #944c0f;  
     text-shadow: 1px 1px 1px #d57a17; 
     font-size: 25px;
 
     background-color: #f5c46d; 
     border: 1px solid #944c0f; 
-    border-radius: 3px 3px 3px 3px; 
+    border-radius: 30px 30px 30px 30px; 
+
+
     
-    margin: 20px 0px 15px 0px;
-    padding: 5px 10px; 
+    margin: 25px 0px 15px 0px;
+    padding: 5px 20px; 
 }

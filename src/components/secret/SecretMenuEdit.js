@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import "./SecretMenu.css"  
+import "./SecretMenu.css"   
 
 export const SecretMenuEdit = () => {
 
@@ -98,7 +98,7 @@ export const SecretMenuEdit = () => {
             </fieldset>
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="btn btn-primary" id="secret-menu-cart-button">
+                className="btn btn-primary" id="secret-menu-save-button">
                 Save Edit
             </button>
         </form>

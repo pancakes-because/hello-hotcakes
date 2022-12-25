@@ -70,13 +70,13 @@ input {
 
     background-color: #292c4c; 
     border: 1px solid #8e6ca4; 
-    border-radius: 3px 3px 3px 3px; 
+    border-radius: 30px 30px 30px 30px; 
     
     margin: 5px 0px 15px 10px;
-    padding: 5px 10px; 
+    padding: 5px 20px;  
 }
 
-/* styles for the "save edit" button */ 
+/* styles for the "save edit" button for the classic menu edit form */ 
 
 #classic-menu-save-button {
     color: #bba1d0;  
@@ -85,8 +85,8 @@ input {
 
     background-color: #292c4c; 
     border: 1px solid #8e6ca4; 
-    border-radius: 3px 3px 3px 3px; 
+    border-radius: 30px 30px 30px 30px; 
     
     margin: 5px 0px 15px 10px;
-    padding: 5px 10px; 
+    padding: 5px 20px; 
 }

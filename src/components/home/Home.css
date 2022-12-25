@@ -45,7 +45,7 @@
     font-weight: bold; 
     text-shadow: 1px 1px 4px #292c4c;
 
-    margin-top: 5px; 
+    margin-top: 5px;  
 }
 
 /* styles for the footer holding the address, email, and phone information */ 
@@ -67,8 +67,8 @@
 }
 
 .footer_item {
-    color: #d57a17; 
-    text-shadow: 0px 0px 0px #944c0f; 
+    color: #944c0f; 
+    text-shadow: 0px 0px 0px #292c4c; 
     
     flex-basis: 35%;
     list-style-type: none;
