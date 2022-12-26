@@ -31,7 +31,6 @@
     margin: 15px 0px 15px 0px;
 
     font-size: 25px;
-    /* font-weight: bold; */
     color: #944c0f;
 }
 
@@ -58,10 +57,10 @@
 /* styles for the input field -- the color the input becomes when selected */
 
 input {
-    accent-color: #d57a17;
+    accent-color: #944c0f;
 }
 
-/* plain styles for the "add to cart" button */
+/* plain styles for the classic menu "add to cart" and "save edit" buttons */
 
 /* #classic-menu-cart-button {
     color: #bba1d0;  
@@ -90,21 +89,21 @@ input {
     padding: 5px 20px; 
 
     vertical-align: top;
-    box-shadow: 2px 1px 2px gray;
-    margin: 4px 10px 4px 10px;
+    box-shadow: 0px 3px 4px gray;
 }
 
 #classic-menu-cart-button:active {
+    color: #5e5168; 
+    background-color: #151626;
+    border: 1px solid #473652;
     box-shadow: 0 0 0 white;
     margin: 6px 10px 2px 10px;
 }
 
-/* styles for the "save edit" button for the classic menu edit form */
+/* styles for the "save edit" button AND the press-down animation when the button is clicked */
 
 #classic-menu-save-button {
     color: #bba1d0;
-    /* text-shadow: 1px 1px 1px #8e6ca4; 
-    font-weight: bold; */
     font-size: 25px;
 
     background-color: #292c4c;
@@ -113,4 +112,15 @@ input {
 
     margin: 5px 0px 15px 10px;
     padding: 5px 20px;
+
+    vertical-align: top;
+    box-shadow: 0px 3px 4px gray;
+}
+
+#classic-menu-save-button:active {
+    color: #5e5168; 
+    background-color: #151626;
+    border: 1px solid #473652;
+    box-shadow: 0 0 0 white;
+    margin: 6px 10px 2px 10px;
 }

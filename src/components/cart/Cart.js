@@ -163,8 +163,8 @@ export const Cart = () => {
                                 <h3 className="order-heading">Order {customMenuOrder.id}</h3>
                                 <div className="custom-order-name-container">
                                     <p className="custom-order-name">{customMenuOrder.batter?.name} batter,</p>
-                                    <p className="custom-order-name">{customMenuOrder.filling?.name} filling,</p>
-                                    <p className="custom-order-name">{customMenuOrder.topping?.name} topping,</p>
+                                    <p className="custom-order-name"> filled with {customMenuOrder.filling?.name},</p>
+                                    <p className="custom-order-name"> topped with {customMenuOrder.topping?.name},</p>
                                     <p className="custom-order-name">{customMenuOrder.stackSize?.stackSize}</p>
                                 </div>
                                 <button
