@@ -22,8 +22,8 @@
 
 .custom_instructions {
     color: #d57a17;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 25px;
+    /* font-weight: bold; */
 
     margin-top: 10px;
     margin-left: 10px;
@@ -54,31 +54,31 @@
 
 .custom_label_batters {
     color: #944c0f;
-    font-size: 25px;
+    font-size: 30px;
     
-    margin-right: 98px;
+    margin-right: 107px;
     margin-bottom: 0px;
 }
 
 .custom_label_fillings {
     color: #944c0f;
-    font-size: 25px; 
+    font-size: 30px; 
 
-    margin-right: 94px;
+    margin-right: 103px;
     margin-bottom: 0px;
 }
 
 .custom_label_toppings {
     color: #944c0f;
-    font-size: 25px; 
+    font-size: 30px; 
 
-    margin-right: 69px;
+    margin-right: 72px;
     margin-bottom: 0px;
 }
 
 .custom_label_stack_sizes {
     color: #944c0f;
-    font-size: 25px; 
+    font-size: 30px; 
 
     margin-right: 37px;
     margin-bottom: 20px;
@@ -87,22 +87,25 @@
 /* styles for the drop-down menu input field container */ 
 
 .custom-menu-form-group {
-    padding-top: 15px; 
+    padding-top: 23px; 
 }
 
 /* styles for the <select> tag drop-down box options */ 
 
 select {
     color: #944c0f; 
-    /* width: 200px; 
-    height: 20px;  */
+    height: 25px; 
+    width: 215px; 
+
+    text-align: justify; 
 }
 
 /* styles for the "add to cart" button */
 
 #custom-menu-cart-button {
     color: #bba1d0;  
-    text-shadow: 1px 1px 1px #8e6ca4;
+    /* text-shadow: 1px 1px 1px #8e6ca4;
+    font-weight: bold;  */
     font-size: 25px;
 
     background-color: #292c4c; 
@@ -117,7 +120,8 @@ select {
 
 #custom-menu-save-button {
     color: #bba1d0;  
-    text-shadow: 1px 1px 1px #8e6ca4; 
+    /* text-shadow: 1px 1px 1px #8e6ca4;  */
+    /* font-weight: bold;  */
     font-size: 25px;
 
     background-color: #292c4c; 

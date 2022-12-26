@@ -209,7 +209,7 @@ export const CustomMenu = () => {
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary" id="custom-menu-cart-button">
-                Add to cart 
+                Add To Cart 
             </button>
 
 

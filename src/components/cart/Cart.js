@@ -212,7 +212,7 @@ export const Cart = () => {
                 <button
                     onClick={(clickEvent) => navigate(`/checkout`)}
                     className="btn btn-primary" id="cart-checkout-button">
-                    Go to checkout
+                    Go To Checkout
                 </button>
             </div>
         </div>
