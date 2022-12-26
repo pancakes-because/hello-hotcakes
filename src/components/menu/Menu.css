@@ -1,86 +1,70 @@
-/* styles for Menu.css */ 
+/* styles for Menu.css */
 
-/* adds space on the outside borders, so the text isn't touch the browser sides */ 
+/* adds space on the outside borders, so the text isn't touch the browser sides */
 
 .classic_menu {
     padding: 0 3rem;
 }
 
-/* styles for the title, "classic menu" */ 
+/* styles for the title, "classic menu" */
 
 .classic__title {
-    font-size: 65px ; 
-    color: #f5c46d; 
-    text-shadow: 1px 1px 0px #944c0f; 
+    font-size: 65px;
+    color: #f5c46d;
+    text-shadow: 1px 1px 0px #944c0f;
 
-    margin-top: 35px; 
-    margin-left: 10px; 
-    margin-bottom: 0px; 
-    padding: 0px; 
+    margin-top: 35px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    padding: 0px;
 }
 
-/* styles for the label & radio input  */ 
+/* styles for the label & radio input  */
 
-/* activated flexbox for the label and input divs to line them side by side */ 
-/* align-items helps the text looks like its level with the radio input in the center */ 
+/* activated flexbox for the label and input divs to line them side by side */
+/* align-items helps the text looks like its level with the radio input in the center */
 
 .classic_menu_label_and_input_container {
-    
-    display: flex; 
-    align-items: center;
-    margin: 15px 0px 15px 0px; 
 
-    font-size: 25px; 
-    font-weight: bold;
-    color:  #944c0f;
+    display: flex;
+    align-items: center;
+    margin: 15px 0px 15px 0px;
+
+    font-size: 25px;
+    /* font-weight: bold; */
+    color: #944c0f;
 }
 
-/* styles for the radio button - not the label */ 
-/* this was size the radio input and make it smaller */ 
+/* styles for the radio button - not the label */
+/* this was size the radio input and make it smaller */
 
 .classic-menu-form-group {
-    display: flex; 
-    flex-direction: column; 
-    margin: 0px 0px 10px 0px; 
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 10px 0px;
 }
 
-/* was using input.form-control to control the alignment of the radio input and label*/ 
-/* turns out that this affects the input fields on the login.js and register.js components */ 
-/* added a unique id called "menu-form-control" to menu.js to isolate the styles to menu.js */ 
+/* was using input.form-control to control the alignment of the radio input and label*/
+/* turns out that this affects the input fields on the login.js and register.js components */
+/* added a unique id called "menu-form-control" to menu.js to isolate the styles to menu.js */
 
 #menu-form-control {
-    margin: 10px; 
-    border: 0; 
-    height: 30px; 
-    width: 25px; 
-} 
+    margin: 10px;
+    border: 0;
+    height: 30px;
+    width: 25px;
+}
 
-/* styles for the input field -- the color the input becomes when selected */ 
+/* styles for the input field -- the color the input becomes when selected */
 
 input {
-    accent-color: #d57a17; 
+    accent-color: #d57a17;
 }
 
-/* styles for the "add to cart" button */ 
+/* plain styles for the "add to cart" button */
 
-#classic-menu-cart-button { 
+/* #classic-menu-cart-button {
     color: #bba1d0;  
-    text-shadow: 1px 1px 1px #8e6ca4;
-    font-size: 25px;
-
-    background-color: #292c4c; 
-    border: 1px solid #8e6ca4; 
-    border-radius: 30px 30px 30px 30px; 
-    
-    margin: 5px 0px 15px 10px;
-    padding: 5px 20px;  
-}
-
-/* styles for the "save edit" button for the classic menu edit form */ 
-
-#classic-menu-save-button {
-    color: #bba1d0;  
-    text-shadow: 1px 1px 1px #8e6ca4;
     font-size: 25px;
 
     background-color: #292c4c; 
@@ -89,4 +73,44 @@ input {
     
     margin: 5px 0px 15px 10px;
     padding: 5px 20px; 
+}  */
+
+/*styles for the "add to cart" button AND the press-down animation when the button is clicked */ 
+
+#classic-menu-cart-button {
+
+    color: #bba1d0;  
+    font-size: 25px;
+
+    background-color: #292c4c; 
+    border: 1px solid #8e6ca4; 
+    border-radius: 30px 30px 30px 30px; 
+    
+    margin: 5px 0px 15px 10px;
+    padding: 5px 20px; 
+
+    vertical-align: top;
+    box-shadow: 2px 1px 2px gray;
+    margin: 4px 10px 4px 10px;
+}
+
+#classic-menu-cart-button:active {
+    box-shadow: 0 0 0 white;
+    margin: 6px 10px 2px 10px;
+}
+
+/* styles for the "save edit" button for the classic menu edit form */
+
+#classic-menu-save-button {
+    color: #bba1d0;
+    /* text-shadow: 1px 1px 1px #8e6ca4; 
+    font-weight: bold; */
+    font-size: 25px;
+
+    background-color: #292c4c;
+    border: 1px solid #8e6ca4;
+    border-radius: 30px 30px 30px 30px;
+
+    margin: 5px 0px 15px 10px;
+    padding: 5px 20px;
 }

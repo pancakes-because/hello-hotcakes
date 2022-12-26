@@ -69,7 +69,10 @@ fieldset {
     color: #bba1d0; 
     background-color: #292c4c; 
     border: 1px solid #8e6ca4; 
-    border-radius: 3px 3px 3px 3px;  
+    border-radius: 30px 30px 30px 30px;  
+
+    font-size: 15px; 
+    padding: 5px 12px; 
 }
 
 .button--close {
