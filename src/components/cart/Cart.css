@@ -79,7 +79,7 @@
     font-size: 20px;
 
     background-color: #292c4c; 
-    border: 1px solid #8e6ca4; 
+    border: 1px solid #bba1d0; 
     border-radius: 30px 30px 30px 30px; 
 
     margin: 5px 10px 15px 0px; 
@@ -90,9 +90,9 @@
 }
 
 .cart-edit-button:active {
-    color: #5e5168; 
-    background-color: #151626;
-    border: 1px solid #473652;
+    color: #a891bb; 
+    background-color: #252844;
+    border: 1px solid #a891bb;
     box-shadow: 0 0 0 white;
     margin: 5px 10px 15px 0px;
 }
@@ -118,7 +118,7 @@
     font-size: 20px;
 
     background-color: #292c4c; 
-    border: 1px solid #8e6ca4; 
+    border: 1px solid #bba1d0; 
     border-radius: 30px 30px 30px 30px; 
 
     margin: 5px 10px 15px 0px; 
@@ -129,9 +129,9 @@
 }
 
 .cart-delete-button:active {
-    color: #5e5168; 
-    background-color: #151626;
-    border: 1px solid #473652;
+    color: #a891bb; 
+    background-color: #252844;
+    border: 1px solid #a891bb;
     box-shadow: 0 0 0 white;
     margin: 5px 10px 15px 0px;
 }
@@ -168,9 +168,10 @@
 }
 
 #cart-checkout-button:active {
-    color: #4a2608; 
-    background-color: #7b6237;
-    border: 1px solid #4a2608;
+    color: #85440e; 
+    background-color: #ddb062;
+    border: 1px solid #85440e;
     box-shadow: 0 0 0 white;
     margin: 25px 0px 15px 0px;
+
 }
