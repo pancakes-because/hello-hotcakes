@@ -55,7 +55,7 @@ export const Cart = () => {
                     // console.log(customMenuOrdersArray[0].customMenuOrders[0].cartId)
                 })
                 .then(filteredArray => {
-                    console.log(filteredArray)
+                    // console.log(filteredArray)
                     setCustomMenuOrders(filteredArray)
                 })
         },
@@ -66,11 +66,23 @@ export const Cart = () => {
     // the "edit" function for each form is kept in a separate module (i.e. "MenuEdit" is the PUT request)
     // for every "order" created, there should be a "DELETE order" button 
     // the "delete" function for each form is kept in a separate module (i.e. "MenuEdit" is the PUT request)
-    // use .map to filter through each order and return/create an edit and delete button 
+    // use .map to filter through each order and dispaly information about each order the user chose 
+    // two buttons, an "edit order" button and "delete order" button, are returned and shown on the page per order
 
-    // *** note, some users will have orders from the secret menu and some will not 
-    // write an if...else statement to determine if this needs to be fetched or not? or use optional chaining? 
+    // when the "edit order" button is clicked, the user sees the original menu form they filled out 
+    // it will also have their choices saved, so they know what is currently stored and more easily recall what to change 
+    // once the new changes have been saved, they will be redirected back to the cart to see the order updated 
+    
+    // when the "delete order" button is clicked, the order is removed from the page and the API database is udpated
 
+    /* below is a function that will refresh the page after any single custom order is deleted */ 
+    /* the function is called in the last .then of the custom order function */ 
+    /* this is helpful if the user has added more than one custom order to the cart page and needs to delete an order */ 
+    /* when a custom order is deleted and the order is deleted, the page will refresh, so the remaning orders are shown immediately    */ 
+
+    function refreshPage() {
+        window.location.reload(false)
+    } 
 
     return <>
 
@@ -199,6 +211,7 @@ export const Cart = () => {
                                                         setCustomMenuOrders([])
                                                     })
                                             })
+                                            .then(refreshPage)
                                     }}
                                     className="cart-delete-button">
                                     Delete Order
