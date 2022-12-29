@@ -30,7 +30,7 @@
 
 .home__title {
     color: #f5c46d; 
-    text-shadow: 1px 1px 4px #944c0f; 
+    text-shadow: 2px 2px 3px #944c0f; 
     font-size: 120px;
     margin-bottom: 0px;
 }
@@ -41,7 +41,7 @@
     color: #d57a17;  
     font-size: 20px; 
     font-weight: bold; 
-    text-shadow: 1px 1px 4px #292c4c;
+    text-shadow: 1px 1px 2px #292c4c;
 
     margin-top: 5px;  
 }
@@ -65,7 +65,7 @@
 }
 
 .footer_item {
-    color: #944c0f; 
+    color: #8e6ca4; 
     text-shadow: 0px 0px 0px #292c4c; 
     
     flex-basis: 35%;

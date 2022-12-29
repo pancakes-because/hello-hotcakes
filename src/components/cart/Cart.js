@@ -116,7 +116,7 @@ export const Cart = () => {
             }
 
 
-            {hotcakesUserObject.member ? <h2 className="cart-menu-heading">Secret Menu Orders</h2> : ""}
+            {hotcakesUserObject.member ? <h2 className="cart-menu-heading"> Secret Menu Orders</h2> : ""}
 
             {
                 secretMenuOrders.length ?
