@@ -72,6 +72,18 @@ export const CustomMenu = () => {
         []
     )
 
+     // when the user has clicked the "add to cart" button, a feedback message appears to confirm this was successful 
+
+    const [feedback, setFeedback] = useState("")
+
+    useEffect(() => {
+        if (feedback !== "") {
+            // Clear feedback to make entire element disappear after 3 seconds
+            setTimeout(() => setFeedback(""), 3000);
+        }
+    }, [feedback])
+
+
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
@@ -109,12 +121,18 @@ export const CustomMenu = () => {
                     })
                 }
             })
+            .then(() => {
+                setFeedback(" ✨ Your order has been added to your cart! ")
+            })
     }
 
     return <>
 
-        <form className="custom_menu">
+        <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
+            {feedback}
+        </div>
 
+        <form className="custom_menu">
             <div className="custom_title_and_tagline_container">
                 <h1 className="custom__title">Custom Menu</h1>
                 <p className="custom_instructions">Build your own stack of pancakes!</p>
@@ -209,10 +227,8 @@ export const CustomMenu = () => {
             <button
                 onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
                 className="btn btn-primary" id="custom-menu-cart-button">
-                Add To Cart 
+                Add To Cart
             </button>
-
-
         </form>
     </>
 }

@@ -76,9 +76,8 @@ export const Cart = () => {
     // when the "delete order" button is clicked, the order is removed from the page and the API database is udpated
 
     /* below is a function that will refresh the page after any single custom order is deleted */ 
-    /* the function is called in the last .then of the custom order function */ 
-    /* this is helpful if the user has added more than one custom order to the cart page and needs to delete an order */ 
-    /* when a custom order is deleted and the order is deleted, the page will refresh, so the remaning orders are shown immediately    */ 
+    /* the function is called in the last .then of the classic menu, secret menu, and custom order functions */ 
+    /* this should help ensure that the page regenerates after each delete and show  */ 
 
     function refreshPage() {
         window.location.reload(false)
@@ -117,6 +116,7 @@ export const Cart = () => {
                                                         setMenuOrders(menuOrdersArray)
                                                     })
                                             })
+                                            .then(refreshPage)
                                     }}
                                     className="cart-delete-button">
                                     Delete Order
@@ -155,6 +155,7 @@ export const Cart = () => {
                                                         setSecretMenuOrders(secretMenuOrdersArray)
                                                     })
                                             })
+                                            .then(refreshPage)
                                     }}
                                     className="cart-delete-button">
                                     Delete Order

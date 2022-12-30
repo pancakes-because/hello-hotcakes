@@ -3,10 +3,16 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
 
-// IMPORTANT NOTE 
-// ideally, each user that logins will have their own unique cart to fill with orders 
-// that cart should also be empty 
+/* this component creates the login page where the user signs in to access the app */ 
+/* the component shares a style sheet with the register page, "Login.css", although there are some global styles that it inherits from Hotcakes.css */ 
+
+// on the login page, there will be an "email address" input field and a "login" button 
+// after filling out the "emali address" form field and clicking the "Login" button, the user will enter the app 
+
+// ideally, each user that signs in will have their own unique cart to fill with menu orders 
+// the cart that is created should be empty at first 
 // so we created a function called "createNewCartForUser" that creates an object with properties called "newCartForUser"
+// the user is also automatically taken to the "home" page one logged in
 
 export const Login = () => {
     const [email, set] = useState("rosered@me.com")
@@ -75,13 +81,13 @@ export const Login = () => {
                     </fieldset>
                     <fieldset>
                         <button type="submit" className="user-button">
-                            Sign In
+                            Login
                         </button>
                     </fieldset>
                 </form>
             </section>
             <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+                <Link to="/register">Need to register?</Link>
             </section>
         </main>
     )

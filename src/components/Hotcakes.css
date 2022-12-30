@@ -12,12 +12,6 @@ textarea {
   line-height: 1.5;
 }
 
-/* commented this out to stop it from interferring with spacing styles on other pages */ 
-
-/* body {
-    padding: 0 3rem;
-} */
-
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Shrikhand', cursive;
   letter-spacing: 2px;

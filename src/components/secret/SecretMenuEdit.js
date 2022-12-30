@@ -4,7 +4,7 @@ import "./SecretMenu.css"
 
 export const SecretMenuEdit = () => {
 
-    // we have an initial state variable to render the menu form, which has radio buttons to let users to make their choices
+    // we have an initial state variable to render the menu form from Menu.js,
     // we're fetching the objects from "menuItems" to display for the user when they see the form
     // then when the user starts clicking the radio buttons, the state is changing
     // so using the onChange event listener, see below in form, we're copying the initial state and modifying it 
@@ -12,8 +12,7 @@ export const SecretMenuEdit = () => {
     const [secretMenuItems, setSecretMenuItems] = useState([])
 
     // this is to edit the user's selections later in the cart 
-    // *** remember to change the URL in the PUT fetch request to target a specific thing 
-    // have this target an id like http://localhost:8088/menuOrders/${menuOrder.id}
+    // *** remember, the URL in the PUT fetch request must target a specific thing 
 
     const [secretMenuItemChoices, setSecretMenuItemChoices] = useState({
         id: 0,

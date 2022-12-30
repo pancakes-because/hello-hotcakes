@@ -10,7 +10,7 @@ export const Checkout = () => {
         <div className="checkout_page">
 
             <h1 className="checkout__title">Checkout</h1>
-            <p className="checkout-instructions">You're close to pancake paradise! </p>
+            <p className="checkout-instructions">Thank you for brunching with us. You're close to pancake paradise! </p>
             <p className="checkout-instructions">Please click the button below to complete payment, and then we'll start making your stack of heavenly hotcakes.</p>
 
             <div className="paypal_image">
