@@ -1,8 +1,9 @@
-/* styles for the Home page */   
+/* styles for Home.js, the home page */   
 
 /* styles for the container holding the title and tagline */ 
 /* styles were meant to help center the title and tagline in the middle of the page */ 
 /* the margin and padding help create a banner-like space or hero image space */ 
+
 /* the color, background-image, and background-size style the gif to go behind the title and tagline */ 
 /* the border is for testing purposes just to see how the space is */ 
 /* got different options for hero/banner gifs; commented these out for ease of switching them out later */ 
@@ -16,7 +17,6 @@
 
     margin: 0px 0px 0px 0px; 
     padding: 232px 0px 232px 0px; 
-    /* padding: 250px 0px 250px 0px;  */
 
     /* background-image: url("https://media.giphy.com/media/uLQcLwZMcrz5m/giphy.gif");  */
     background-image: url("https://media.giphy.com/media/ACLcxEifdoZyw/giphy-downsized-large.gif");

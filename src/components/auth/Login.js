@@ -15,7 +15,7 @@ import "./Login.css"
 // the user is also automatically taken to the "home" page one logged in
 
 export const Login = () => {
-    const [email, set] = useState("rosered@me.com")
+    const [email, set] = useState("snowwhite@me.com")
     const navigate = useNavigate()
 
     const handleLogin = (e) => {
@@ -81,7 +81,7 @@ export const Login = () => {
                     </fieldset>
                     <fieldset>
                         <button type="submit" className="user-button">
-                            Login
+                            Sign In
                         </button>
                     </fieldset>
                 </form>

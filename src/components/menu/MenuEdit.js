@@ -1,14 +1,12 @@
-// on the cart page, the user should be able to cilck the "edit order" button 
-// after they do, they should be taken to a page that looks like the menu form 
-// the options the user chose when filling out the form originally should be clearly marked
-
-// *** This component is to EDIT the user's selections later in the cart *** 
-// *** remember to change the URL in the PUT fetch request to target a specific thing 
-// have this target an id like http://localhost:8088/menuOrders/${menuOrder.id}
 
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import "./Menu.css" 
+
+// *** This component is to EDIT the user's selections later in the cart ***  
+// on the cart page, the user should be able to cilck the "edit order" button 
+// after they do, they should be taken to a page that looks like the menu form 
+// the options the user chose when filling out the form originally should be clearly marked
 
 export const MenuEdit = () => {
 
@@ -19,18 +17,22 @@ export const MenuEdit = () => {
 
     const [menuItems, setMenuItems] = useState([])
 
-    // this is to edit the user's selections later in the cart 
-    // *** remember to change the URL in the PUT fetch request to target a specific thing 
-    // have this target an id like http://localhost:8088/menuOrders/${menuOrder.id}
-
+    // this state variable is recording the user's choices
+  
     const [menuItemChoices, setMenuItemChoices] = useState({
         id: 0,
         menuItemId: 0,
         cartId: 0
     })
 
+    // see GuestViews.js and MemberViews.js for more context on useParams()
+    // makes it so that the edit URL is dynamic and changes as the values change 
+    // the useNavigate() makes it so that the user is navigated back to the cart page after clicking the "save edits" button
+
     const { menuOrderId } = useParams()
     const navigate = useNavigate()
+
+    // we're fetching the menu items and the what the user chose before when they originally filled out the form 
 
     useEffect(
         () => {
@@ -54,6 +56,10 @@ export const MenuEdit = () => {
         []
     )
 
+    // here, we're editing the choices that the user submitted through the form before 
+    // reaching out to the API, looking for a specific order, and letting the user edit that 
+    // with the json.stringify piece, telling the one element what it should look like 
+
     const handleSaveButtonClick = (event) => {
         event.preventDefault()
 
@@ -71,8 +77,9 @@ export const MenuEdit = () => {
 
     }
 
-    // to get the user's chioces to autopopulate the form when editing
-    // use a checked ternary statement 
+    // to get the user's chioces to autopopulate the form when editing, used a checked ternary statement 
+    // if the id of what the user chose matches the id of the menu item, it highlights/fills in that radio input field 
+    // it goes through each option and does this "check" to see what should be marked 
 
     return <>
 

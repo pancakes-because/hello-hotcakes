@@ -1,25 +1,18 @@
 
-// RECAP
-// created state 
-// fetched the data to store in state 
-// created the input field, iterated the data we got back in state
-// we are now tracking the choice of the batter we have selected
-
 import { useEffect, useState } from "react"
 import "./CustomMenu.css"
 
 export const CustomMenu = () => {
 
-    // we made a cart object for local storage, so each user gets a cart as soon as they login
+    // we made a cart object for local storage, so each user gets a "cart" as soon as they login
+    // ultimately, the cart is what will hold and display the user's choies from the menu 
     // see Login.js for more context if needed 
 
     const localCart = localStorage.getItem("cart")
     const hotcakesCartObject = JSON.parse(localCart)
 
-    // got initial state variables to render the secret menu form, which is comprised of 4 fields/data tables 
-    // got a separate fetch request for  batters, fillings, toppings, and stack sizes - so 4 fetch requests
-    // this will fetch all of that information, so the user sees it immediately 
-
+    // got initial state variables to render the custom menu form and display batter, filling, stack size, and topping items 
+    // these items are what the user can choose from on the form 
     // when the user starts clicking the radio buttons, the state is changing
     // so using the onChange event listeners, see below in form, we're copying the initial state and modifying it 
 
@@ -32,6 +25,7 @@ export const CustomMenu = () => {
     const [customMenuItemToppings, setCustomMenuItemToppings] = useState([])
 
     // this state variable is recording the user's choices for each batter, filling, topping, and stack size choice they made
+    // toppingOrderId is not being utilized right now. will be needed if we want users to add multiple toppings per one order. 
 
     const [customMenuItemChoices, setCustomMenuItemChoices] = useState({
 
@@ -42,6 +36,11 @@ export const CustomMenu = () => {
         stackSizeId: 0
 
     })
+
+    // we are using 4 separate arrays containing various objects to render each select input field for the user to interact with
+    // have a separate fetch request for batters, fillings, toppings, and stack sizes 
+    // these will fetch all of custom item information for batters, toppings, fillings, and stack sizes
+    // this will help render that information for the user to see immediately and pick from 
 
     useEffect(
         () => {
@@ -72,7 +71,8 @@ export const CustomMenu = () => {
         []
     )
 
-     // when the user has clicked the "add to cart" button, a feedback message appears to confirm this was successful 
+    // when the user has clicked the "add to cart" button, a feedback message appears to confirm this was successful 
+    // this will be after everything has been posted to the API 
 
     const [feedback, setFeedback] = useState("")
 
@@ -93,9 +93,12 @@ export const CustomMenu = () => {
             cartId: hotcakesCartObject.cartId
         }
 
-        // based on the data, we have to post to customMenuItems first 
+        // based on how the data is organized, we have to post to customMenuItems first 
         // then, we post the information in customMenuItems to customMenuOrders next 
-        // this sets us up to get this data on in the cart by expanding on both data tables 
+        // basically, once everything has loaded and there is an id, we move everyting held in customMenuItems to customMenuOrders
+        // this lets us get this data in the cart later (using fetch requests and the _expand method in the cart component)
+        // reminder, the feedback message displays once the "add to cart" button has been clicked and data has been sent to the API
+
 
         return fetch(`http://localhost:8088/customMenuItems`, {
             method: "POST",
@@ -122,9 +125,20 @@ export const CustomMenu = () => {
                 }
             })
             .then(() => {
-                setFeedback(" ✨ Your order has been added to your cart! ")
+                setFeedback("Your order has been added to your cart!")
             })
     }
+
+    // we rendering the custom menu form in the jsx below 
+    // we're looping through the objects in the arrays for batters, fillings, toppings, and stack sizes 
+    // a select drop-down menu is created for each category, and the names and prices of each object are shown as options
+
+    /* RECAP */ 
+    // we created initial state 
+    // we fetched the data to store in state 
+    // we created the input fields, and iterated the data we got back in state
+    // we are now tracking the choice of the batter, filling, topping, and stack size the user has selected
+    // we have a feedback message to let the user know they successfully added what they chose to the cart 
 
     return <>
 

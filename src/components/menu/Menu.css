@@ -1,4 +1,4 @@
-/* styles for Menu.css */
+/* styles for Menu.js, the classic menu form */
 
 /* adds space on the outside borders, so the text isn't touch the browser sides */
 
@@ -7,6 +7,8 @@
 }
 
 /* styles for the title, "classic menu" */
+/* gave the title a color with shadow to make it stand out */ 
+/* adjusted the margin and padding to make it have the preferred spacing on the page */ 
 
 .classic__title {
     font-size: 65px;
@@ -20,9 +22,10 @@
 }
 
 /* styles for the label & radio input  */
-
 /* activated flexbox for the label and input divs to line them side by side */
 /* align-items helps the text looks like its level with the radio input in the center */
+/* also adjusted margin so it meets preferred spacing and alignment */ 
+/* also played with the font size and color */ 
 
 .classic_menu_label_and_input_container {
 
@@ -34,8 +37,9 @@
     color: #944c0f;
 }
 
-/* styles for the radio button - not the label */
-/* this was size the radio input and make it smaller */
+/* styles for the radio button input field - not the label */
+/* this was to size the radio input field and make it smaller */
+/* also utilized flexbox here to help align */ 
 
 .classic-menu-form-group {
     display: flex;
@@ -43,6 +47,7 @@
     margin: 0px 0px 10px 0px;
 }
 
+/* the styles are mainly for adjusting the width and height of the input fields, so they are bigger and more legible */ 
 /* was using input.form-control to control the alignment of the radio input and label*/
 /* turns out that this affects the input fields on the login.js and register.js components */
 /* added a unique id called "menu-form-control" to menu.js to isolate the styles to menu.js */
@@ -54,7 +59,8 @@
     width: 25px;
 }
 
-/* styles for the input field -- the color the input becomes when selected */
+/* styles for the radio button input field */ 
+/* customizes the color the input becomes when the radio button input field has been clicked/selected selected */ 
 
 input {
     accent-color: #944c0f;
@@ -74,7 +80,9 @@ input {
     padding: 5px 20px; 
 }  */
 
-/*styles for the "add to cart" button AND the press-down animation when the button is clicked */ 
+/* styles for the "add to cart" button AND the press-down animation when the button is clicked */ 
+/* the button initially has a drop shadow to give it a raised effect */ 
+/* when the button is clicked, the drop shadow disappears and the button darkens slightly as if it is being pressed down */ 
 
 #classic-menu-cart-button {
 
@@ -139,6 +147,8 @@ input {
   }
 
 /* styles for the "save edit" button, from MenuEdit.js, AND the press-down animation when the button is clicked */
+/* the button initially has a drop shadow to give it a raised effect */ 
+/* when the button is clicked, the drop shadow disappears and the button darkens slightly as if it is being pressed down */ 
 
 #classic-menu-save-button {
     color: #bba1d0;

@@ -1,24 +1,22 @@
-// on the cart page, the user should be able to cilck the "edit order" button 
-// after they do, they should be taken to a page that looks like the menu form 
-// the options the user chose when filling out the form originally should be clearly marked
-
-// *** This component is to EDIT the user's selections later in the cart *** 
-// *** remember to change the URL in the PUT fetch request to target a specific thing 
-// have this target an id like http://localhost:8088/menuOrders/${menuOrder.id}
 
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import "./CustomMenu.css"
+
+// *** This component is to EDIT the user's selections for custom menu form later in the cart *** 
+// on the cart page, the user should be able to cilck the "edit order" button 
+// after they do, they should be taken to a page that looks like the menu form 
+// the options the user chose when filling out the form originally should be clearly marked
 
 export const CustomMenuEdit = () => {
 
     const localCart = localStorage.getItem("cart")
     const hotcakesCartObject = JSON.parse(localCart)
 
-    // we have initial state variablesto render the menu form, which has radio buttons to let users to make their choices
-    // we're fetching the objects from "menuItems" to display for the user when they see the form
-    // then when the user starts clicking the radio buttons, the state is changing
-    // so using the onChange event listener, see below in form, we're copying the initial state and modifying it 
+    // got initial state variables to render the custom menu form and display batter, filling, stack size, and topping items 
+    // these items are what the user can choose from on the form 
+    // when the user starts clicking the radio buttons, the state is changing
+    // so using the onChange event listeners, see below in form, we're copying the initial state and modifying it 
 
     const [customMenuItemBatters, setCustomMenuItemBatters] = useState([])
 
@@ -28,9 +26,8 @@ export const CustomMenuEdit = () => {
 
     const [customMenuItemToppings, setCustomMenuItemToppings] = useState([])
 
-    // this is to edit the user's selections later in the cart 
-    // *** remember to change the URL in the PUT fetch request to target a specific thing 
-    // have this target an id like http://localhost:8088/menuOrders/${menuOrder.id}
+    // this state variable is recording the user's choices for each batter, filling, topping, and stack size choice they made
+    // toppingOrderId is not being utilized right now. will be needed if we want users to add multiple toppings per one order.
 
     const [customMenuItemChoices, setCustomMenuItemChoices] = useState({
 
@@ -43,10 +40,17 @@ export const CustomMenuEdit = () => {
 
     })
 
+    // see GuestViews.js and MemberViews.js for more context on useParams()
+    // makes it so that the edit URL is dynamic and changes as the values change 
+    // the useNavigate() makes it so that the user is navigated back to the cart page after clicking the "save edits" button
+
     const { customMenuOrderId } = useParams()
     const navigate = useNavigate()
 
-    // sets the choices that the user has to pick from initially 
+    // we are using 4 separate arrays containing various objects to render each select input field for the user to interact with
+    // have a separate fetch request for batters, fillings, toppings, and stack sizes 
+    // these will fetch all of custom item information for batters, toppings, fillings, and stack sizes
+    // this will help render that information for the user to see immediately and pick from 
 
     useEffect(
         () => {
@@ -89,10 +93,10 @@ export const CustomMenuEdit = () => {
         []
     )
 
-    // editing what the user submitted before 
-    // reaching out to the API  
-    // looking for a specific order and letting us edit that 
-    // with the json.stringify, telling the one element what it should look like 
+    // here, we're editing the choices that the user submitted through the form before 
+    // reaching out to the API, looking for a specific order, and letting the user edit that 
+    // with the json.stringify piece, telling the one element what it should look like 
+    // the "value" utilizes the state holding the user's choices, and lets us show the user what they selected previously 
 
     const handleSaveButtonClick = (event) => {
         event.preventDefault()

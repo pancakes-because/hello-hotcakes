@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./Menu.css"
 
-/* note: this component creates the "classic menu" form */
+/* this component creates the classic menu form */
 /* the component has it's own style sheet, "Menu.css", although there are some global styles that it inherits from Hotcakes.css */
 
 export const Menu = () => {
@@ -80,7 +80,7 @@ export const Menu = () => {
             .then(response => response.json())
             .then(() => { })
             .then(() => {
-                setFeedback(" ✨ Your order has been added to your cart! ")
+                setFeedback("Your order has been added to your cart!")
             })
     }
 
