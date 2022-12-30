@@ -82,7 +82,7 @@ export const SecretMenu = () => {
             .then(response => response.json())
             .then(() => { })
             .then(() => {
-                setFeedback(" ✨ Your order has been added to your cart! ")
+                setFeedback("Your order has been added to your cart!")
             })
     }
 

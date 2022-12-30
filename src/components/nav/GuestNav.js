@@ -14,16 +14,16 @@ export const GuestNav = () => {
         <ul className="navbar">
 
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/home">HOME</Link>
+                <Link className="navbar__link" to="/home">Home</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/menu">CLASSIC MENU</Link>
+                <Link className="navbar__link" to="/menu">Classic Menu</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/custom">CUSTOM MENU</Link>
+                <Link className="navbar__link" to="/custom">Custom Menu</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/cart">CART</Link>
+                <Link className="navbar__link" to="/cart">Cart</Link>
             </li> 
             {
                 localStorage.getItem("hotcakes_user")
@@ -32,7 +32,7 @@ export const GuestNav = () => {
                             localStorage.removeItem("hotcakes_user")
                             localStorage.removeItem("cart") 
                             navigate("/", {replace: true})
-                        }}>LOGOUT</Link>
+                        }}>Sign Out</Link>
                     </li>
                     : ""
 
@@ -47,7 +47,7 @@ export const GuestNav = () => {
                 //                     localStorage.removeItem("cart")
                 //                     navigate("/", { replace: true })
                 //                 })
-                //         }}>SIGN OUT</Link>
+                //         }}>Sign Out</Link>
                 //     </li>
                 //     : ""
             }

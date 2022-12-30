@@ -3,6 +3,9 @@ import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Cart.css"
 
+/* this component creates a cart page for users to see the orders they created using the classic, secret, and custom menu forms */ 
+/* the component has it's own style sheet, "Cart.css", although there are some global styles that it inherits from Hotcakes.css */ 
+
 export const Cart = () => {
 
     const localHotcakesUser = localStorage.getItem("hotcakes_user")
@@ -72,12 +75,13 @@ export const Cart = () => {
     // when the "edit order" button is clicked, the user sees the original menu form they filled out 
     // it will also have their choices saved, so they know what is currently stored and more easily recall what to change 
     // once the new changes have been saved, they will be redirected back to the cart to see the order updated 
-    
     // when the "delete order" button is clicked, the order is removed from the page and the API database is udpated
 
-    /* below is a function that will refresh the page after any single custom order is deleted */ 
-    /* the function is called in the last .then of the classic menu, secret menu, and custom order functions */ 
-    /* this should help ensure that the page regenerates after each delete and show  */ 
+    // there is a function that will refresh the page after any single order is deleted  
+    // the function is called in the last .then of the classic menu, secret menu, and custom order functions 
+    // this should help ensure that the page regenerates after each delete and shows the remaning orders  
+
+    //
 
     function refreshPage() {
         window.location.reload(false)

@@ -1,4 +1,4 @@
-/* styles for CustomMenu.css */
+/* styles for CustomMenu.js, the custom menu form */
 
 /* adds space on the outside borders, so the text isn't touch the browser sides */
 
@@ -6,7 +6,9 @@
     padding: 0 3rem;
 }
 
-/* styles for the title, "secret menu" */
+/* styles for the title, "custom menu" */
+/* gave the title a color with shadow to make it stand out */ 
+/* adjusted the margin and padding to make it have the preferred spacing on the page */ 
 
 .custom__title {
     font-size: 65px ; 
@@ -50,7 +52,9 @@
     margin: 10px 10px 10px 0px;
 }
 
-/* the .custom_label styles control how the individual labels for batters, fillings, toppings, and stack sizes are aligned on the page */
+/* the .custom_label styles control how the individual batters, fillings, toppings, and stack sizes lables are aligned */
+/* they each have a color */ 
+/* they are also spaced so that the left corners of the fields are lined up with each other  */ 
 
 .custom_label_batters {
     color: #944c0f;
@@ -102,21 +106,9 @@ select {
     border: 1px solid #944c0f; 
 }
 
-/* plain styles for the custom menu "add to cart" and "save edit" buttons */
-
-/* #custom-menu-cart-button {
-    color: #bba1d0;  
-    font-size: 25px;
-
-    background-color: #292c4c; 
-    border: 1px solid #8e6ca4; 
-    border-radius: 30px 30px 30px 30px; 
-    
-    margin: 5px 0px 15px 10px;
-    padding: 5px 20px; 
-}  */
-
-/*styles for the "add to cart" button AND the press-down animation when the button is clicked */ 
+/* styles for the "add to cart" button AND the press-down animation when the button is clicked */ 
+/* the button initially has a drop shadow to give it a raised effect */ 
+/* when the button is clicked, the drop shadow disappears and the button darkens slightly as if it is being pressed down */ 
 
 #custom-menu-cart-button {
     color: #bba1d0;  
@@ -181,6 +173,8 @@ select {
 
 
 /* styles for the "save edit" button AND the press-down animation when the button is clicked */
+/* the button initially has a drop shadow to give it a raised effect */ 
+/* when the button is clicked, the drop shadow disappears and the button darkens slightly as if it is being pressed down */ 
 
 #custom-menu-save-button {
     color: #bba1d0;
