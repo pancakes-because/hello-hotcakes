@@ -3,6 +3,15 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Login.css"
 
+/* this component creates the register page where a vistor can sign up to be a user and access the app */ 
+/* the component shares a style sheet with the login page, "Login.css", although there are some global styles that it inherits from Hotcakes.css */ 
+
+// once the newly created user has an id that can be identified by the API/database, a new cart is created for them 
+// the new cart is also registerd with the API/database 
+
+// once registered as a user, they can login through the login page from now on 
+// each visitor that signs up as a user must use a unique email address; duplicate email addresses now allowed 
+
 export const Register = (props) => {
     const [customer, setCustomer] = useState({
         email: "",

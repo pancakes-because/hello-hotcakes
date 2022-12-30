@@ -6,6 +6,8 @@
     padding: 0 3rem;
 }
 
+/* styles the "cart" title */ 
+
 .cart__title {
     font-size: 65px ; 
     color: #f5c46d; 
@@ -16,9 +18,12 @@
     padding: 0px; 
 }
 
+/* styles the "classic menu orders", "secret menu orders", and "custom menu orders" headings */ 
+
 .cart-menu-heading {
     color: #d57a17;
     text-shadow: 0px 0px 0px #944c0f; 
+    font-size: 25px; 
 }
 
 /* styles for the "Order" heading */ 
@@ -175,3 +180,4 @@
     margin: 25px 0px 15px 0px;
 
 }
+

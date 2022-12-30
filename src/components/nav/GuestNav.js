@@ -47,7 +47,7 @@ export const GuestNav = () => {
                 //                     localStorage.removeItem("cart")
                 //                     navigate("/", { replace: true })
                 //                 })
-                //         }}>LOGOUT</Link>
+                //         }}>SIGN OUT</Link>
                 //     </li>
                 //     : ""
             }
