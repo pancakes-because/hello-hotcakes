@@ -2,6 +2,9 @@
 import { useEffect, useState } from "react"
 import "./CustomMenu.css"
 
+/* this component creates the custom menu form */
+/* the component has it's own style sheet, "CustomMenu.css", although there are some global styles that it inherits from Hotcakes.css */
+
 export const CustomMenu = () => {
 
     // we made a cart object for local storage, so each user gets a "cart" as soon as they login
@@ -74,14 +77,14 @@ export const CustomMenu = () => {
     // when the user has clicked the "add to cart" button, a feedback message appears to confirm this was successful 
     // this will be after everything has been posted to the API 
 
-    const [feedback, setFeedback] = useState("")
+    const [customFeedback, setCustomFeedback] = useState("")
 
     useEffect(() => {
-        if (feedback !== "") {
-            // Clear feedback to make entire element disappear after 3 seconds
-            setTimeout(() => setFeedback(""), 3000);
+        if (customFeedback !== "") {
+            // Clear feedback to make entire element disappear after 4 seconds
+            setTimeout(() => setCustomFeedback(""), 4000);
         }
-    }, [feedback])
+    }, [customFeedback])
 
 
     const handleSaveButtonClick = (event) => {
@@ -125,7 +128,7 @@ export const CustomMenu = () => {
                 }
             })
             .then(() => {
-                setFeedback("Your order has been added to your cart!")
+                setCustomFeedback("order added to cart!")
             })
     }
 
@@ -142,8 +145,8 @@ export const CustomMenu = () => {
 
     return <>
 
-        <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
-            {feedback}
+        <div className={`${customFeedback.includes("customError") ? "customError" : "customFeedback"} ${customFeedback === "" ? "customInvisible" : "customVisible"}`}>
+            {customFeedback}
         </div>
 
         <form className="custom_menu">

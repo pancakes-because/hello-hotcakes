@@ -135,10 +135,11 @@ select {
 
 /* styles for a feedback message that displays when the user clicks the "add to cart" button */ 
 
-.feedback {
-    border: 1px dotted cadetblue;
+.customFeedback {
+    border: 1px double #568259;
     padding: 1rem;
-    background-color: rgb(218, 230, 247);
+    color: #3b2c35;  
+    background-color: #ccfccb; 
     position: absolute;
     top: 20%;
     left: 50%;
@@ -147,18 +148,19 @@ select {
     animation: 1s slideDown;
   }
   
-  .invisible {
+  .customInvisible {
     display: none;
   }
   
-  .visible {
+  .customVisible {
     display: block;
   }
   
-  .error {
-    border: 1px dotted rgb(107, 21, 4);
+  .customError {
+    border: 1px double #EF3054;
     padding: 1rem;
-    background-color: rgb(255, 229, 228);
+    color: #0B0A07; 
+    background-color: #ff9b85;
   }
   
   @keyframes slideDown {

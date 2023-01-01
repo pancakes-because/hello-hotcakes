@@ -37,14 +37,14 @@ export const SecretMenu = () => {
 
     // when the user has clicked the "add to cart" button, a feedback message appears to confirm this was successful 
 
-    const [feedback, setFeedback] = useState("")
+    const [secretFeedback, setSecretFeedback] = useState("")
 
     useEffect(() => {
-        if (feedback !== "") {
-            // Clear feedback to make entire element disappear after 3 seconds
-            setTimeout(() => setFeedback(""), 3000);
+        if (secretFeedback !== "") {
+            // clear feedback to make entire element disappear after 4 seconds
+            setTimeout(() => setSecretFeedback(""), 4000);
         }
-    }, [feedback])
+    }, [secretFeedback])
 
 
     // next, save the user's choices to permanent state though... 
@@ -82,14 +82,14 @@ export const SecretMenu = () => {
             .then(response => response.json())
             .then(() => { })
             .then(() => {
-                setFeedback("Your order has been added to your cart!")
+                setSecretFeedback("order added to cart!")
             })
     }
 
     return <>
 
-        <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
-            {feedback}
+        <div className={`${secretFeedback.includes("secretError") ? "secretError" : "secretFeedback"} ${secretFeedback === "" ? "secretInvisible" : "secretVisible"}`}>
+            {secretFeedback}
         </div>
 
         <form className="secret_menu">
