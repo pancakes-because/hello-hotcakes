@@ -7,6 +7,9 @@ import { MenuEdit } from "../menu/MenuEdit"
 import { CustomMenuEdit } from "../custom/CustomMenuEdit"
 import { Checkout } from "../checkout/Checkout" 
 
+// see ApplicationViews.js for more context 
+// there are the views that users can see if they are "guests" ("member" = "false")
+
 export const GuestViews = () => {
     return (
         <Routes>

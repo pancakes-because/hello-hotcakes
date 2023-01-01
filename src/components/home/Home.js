@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react"
 import "./Home.css" 
 
+/* this component creates the home page that users first see upon entering the app */
+/* the component has it's own style sheet, "Home.css", although there are some global styles that it inherits from Hotcakes.css */
+
 export const Home = () => {
 
     return <>

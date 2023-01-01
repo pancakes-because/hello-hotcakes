@@ -36,14 +36,14 @@ export const Menu = () => {
 
      // when the user has clicked the "add to cart" button, a feedback message appears to confirm this was successful 
 
-    const [feedback, setFeedback] = useState("")
+    const [classicFeedback, setClassicFeedback] = useState("")
 
     useEffect(() => {
-        if (feedback !== "") {
-            // Clear feedback to make entire element disappear after 3 seconds
-            setTimeout(() => setFeedback(""), 3000);
+        if (classicFeedback !== "") {
+            // clear feedback to make entire element disappear after 4 seconds
+            setTimeout(() => setClassicFeedback(""), 4000);
         }
-    }, [feedback])
+    }, [classicFeedback])
 
     // next, save the user's choices to permanent state though... 
     // do this by using a POST request to store the user's choices in the API/database 
@@ -80,7 +80,7 @@ export const Menu = () => {
             .then(response => response.json())
             .then(() => { })
             .then(() => {
-                setFeedback("Your order has been added to your cart!")
+                setClassicFeedback("order added to cart!")
             })
     }
 
@@ -89,8 +89,8 @@ export const Menu = () => {
 
     return <>
 
-        <div className={`${feedback.includes("Error") ? "error" : "feedback"} ${feedback === "" ? "invisible" : "visible"}`}>
-            {feedback}
+        <div className={`${classicFeedback.includes("classicError") ? "classicError" : "classicFeedback"} ${classicFeedback === "" ? "classicInvisible" : "classicVisible"}`}>
+            {classicFeedback}
         </div>
 
         <form className="classic_menu">

@@ -9,6 +9,10 @@ import { CustomMenuEdit } from "../custom/CustomMenuEdit"
 import { SecretMenuEdit } from "../secret/SecretMenuEdit"
 import { Checkout } from "../checkout/Checkout" 
 
+// see ApplicationViews.js for more context 
+// there are the views that users can see if they are "members" ("member" = "true")
+// only members have access to the secret menu and secret menu edit page views 
+
 export const MemberViews = () => {
     return (
         <Routes>

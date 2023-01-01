@@ -1,6 +1,11 @@
 import { GuestNav } from "./GuestNav"
 import { MemberNav } from "./MemberNav"
 
+// the "hotcakesUserObject" object has a property of "member" on it
+// the property is a boolean, so the values can be "true" or "false"
+// if true, where the user is a member, they see the nav links accessible to members
+// if false, where the user is not a member, they see the nav links accessible to guests
+
 export const NavBar = () => {
 
     const localHotcakesUser = localStorage.getItem("hotcakes_user")

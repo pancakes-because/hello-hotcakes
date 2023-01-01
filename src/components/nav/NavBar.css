@@ -1,16 +1,18 @@
 
-/* styles for the container holding the navbar options */ 
+/* styles for GuestNav.js and MemberNav.js, the guest and member nav menus */
+
+/* styles for the container holding the navbar options - the nav bar banner */ 
+/* flexbox activated to help create desired alignment and spacing for the nav bar*/
+/* the border can help check how elements are spaced on the page, but not required  otherwise */  
 
 .navbar {
     display: flex;
     flex-wrap: nowrap;
     text-align: center; 
-    /* justify-content: left; */
 
     margin: 0px; 
     padding-top: 16px; 
     padding-bottom: 16px; 
-    /* padding-left: 0px;  */
     
     background-color: #292c4c;
     border-bottom: 1px solid black; 
@@ -55,6 +57,8 @@ a:hover {
     color: #8e6ca4; 
     text-shadow: 0px 0px #292c4c; 
 }
+
+/* gives a link the following color when the user clicks it  */ 
 
 a:active {
     color: #bba1d0; 
