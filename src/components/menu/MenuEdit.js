@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import "./Menu.css" 
+import "./Menu.css"
 
 // *** This component is to EDIT the user's selections later in the cart ***  
 // on the cart page, the user should be able to cilck the "edit order" button 
@@ -18,7 +18,7 @@ export const MenuEdit = () => {
     const [menuItems, setMenuItems] = useState([])
 
     // this state variable is recording the user's choices
-  
+
     const [menuItemChoices, setMenuItemChoices] = useState({
         id: 0,
         menuItemId: 0,
@@ -80,6 +80,8 @@ export const MenuEdit = () => {
     // to get the user's chioces to autopopulate the form when editing, used a checked ternary statement 
     // if the id of what the user chose matches the id of the menu item, it highlights/fills in that radio input field 
     // it goes through each option and does this "check" to see what should be marked 
+    // once the user has clicked the "add to cart" button, a feedback message appears and confirms this.  
+    
 
     return <>
 

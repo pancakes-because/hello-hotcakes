@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
 
+// this component holds the links that show for users who are "members"
+
 // added some logic here for the "cart", so each user has a unique cart 
 // without this logic, users would sign in and add choices to the SAME cart 
 // when the user signs out, the cart is deleted 
