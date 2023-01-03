@@ -1,14 +1,20 @@
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
 
+// this component holds the links that show for users who are "guests" 
+
+// added some logic here for the "cart", so each user has a unique cart 
+// without this logic, users would sign in and add choices to the SAME cart 
+// when the user signs out, the cart is deleted 
+
 export const GuestNav = () => {
     const navigate = useNavigate()
 
-    // only need lines 10-11 uncommented if lines 39-52 are uncommented
-    // if using lines 29-37, comment out lines 10-11 and lines 39-52
+    // only need lines 16-17 uncommented if lines 45-52 are uncommented
+    // if using lines 34-43, comment out lines 16-17 and lines 45-52
 
-    // const localHotcakesUser = localStorage.getItem("cart")
-    // const hotcakesUserObject = JSON.parse(localHotcakesUser)
+    const localHotcakesUser = localStorage.getItem("cart")
+    const hotcakesUserObject = JSON.parse(localHotcakesUser)
 
     return (
         <ul className="navbar">
@@ -26,30 +32,30 @@ export const GuestNav = () => {
                 <Link className="navbar__link" to="/cart">Cart</Link>
             </li> 
             {
-                localStorage.getItem("hotcakes_user")
-                    ? <li className="navbar__item navbar__logout">
-                        <Link className="navbar__link" to="" onClick={() => {
-                            localStorage.removeItem("hotcakes_user")
-                            localStorage.removeItem("cart") 
-                            navigate("/", {replace: true})
-                        }}>Sign Out</Link>
-                    </li>
-                    : ""
-
                 // localStorage.getItem("hotcakes_user")
                 //     ? <li className="navbar__item navbar__logout">
                 //         <Link className="navbar__link" to="" onClick={() => {
-                //             fetch(`http://localhost:8088/carts/${hotcakesUserObject.cartId}`, {
-                //                 method: "DELETE"
-                //             }).then((res) => res.json())
-                //                 .then(() => {
-                //                     localStorage.removeItem("hotcakes_user")
-                //                     localStorage.removeItem("cart")
-                //                     navigate("/", { replace: true })
-                //                 })
+                //             localStorage.removeItem("hotcakes_user")
+                //             localStorage.removeItem("cart") 
+                //             navigate("/", {replace: true})
                 //         }}>Sign Out</Link>
                 //     </li>
                 //     : ""
+
+                localStorage.getItem("hotcakes_user")
+                    ? <li className="navbar__item navbar__logout">
+                        <Link className="navbar__link" to="" onClick={() => {
+                            fetch(`http://localhost:8088/carts/${hotcakesUserObject.cartId}`, {
+                                method: "DELETE"
+                            }).then((res) => res.json())
+                                .then(() => {
+                                    localStorage.removeItem("hotcakes_user")
+                                    localStorage.removeItem("cart")
+                                    navigate("/", { replace: true })
+                                })
+                        }}>Sign Out</Link>
+                    </li>
+                    : ""
             }
         </ul>
     )

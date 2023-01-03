@@ -8,7 +8,8 @@ import { CustomMenuEdit } from "../custom/CustomMenuEdit"
 import { Checkout } from "../checkout/Checkout" 
 
 // see ApplicationViews.js for more context 
-// there are the views that users can see if they are "guests" ("member" = "false")
+// there are the views that users can see if they are "guests" ("member" = "false") 
+// includes home page, classic menu form & edit page, custom menu form & edit page, cart page, and checkout page
 
 export const GuestViews = () => {
     return (

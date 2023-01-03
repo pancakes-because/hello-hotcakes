@@ -11,6 +11,7 @@ import { Checkout } from "../checkout/Checkout"
 
 // see ApplicationViews.js for more context 
 // there are the views that users can see if they are "members" ("member" = "true")
+// includes home page, classic menu form & edit page, custom menu form & edit page, secret menu form & edit page, cart page, and checkout page
 // only members have access to the secret menu and secret menu edit page views 
 
 export const MemberViews = () => {
