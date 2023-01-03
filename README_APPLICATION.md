@@ -39,29 +39,40 @@ iii. How does the application work?
 
    Recordings and GIPHS: 
 
+
    https://recordit.co/P5EySLBInn 
-   http://g.recordit.co/P5EySLBInn.gif 
 
    https://recordit.co/VremFCN51g 
-   http://g.recordit.co/VremFCN51g.gif 
 
    https://recordit.co/ca1LDOeq4x 
-   http://g.recordit.co/ca1LDOeq4x.gif 
 
    https://recordit.co/3YkFrZ8wD3 
-   http://g.recordit.co/3YkFrZ8wD3.gif 
    
    https://recordit.co/mswkME7uXS 
-   http://g.recordit.co/mswkME7uXS.gif 
 
    https://recordit.co/NuSOKNX0H3 
-   http://g.recordit.co/NuSOKNX0H3.gif 
 
    https://recordit.co/33YSG9q9yk 
-   http://g.recordit.co/33YSG9q9yk.gif 
 
    https://recordit.co/Y5cD7qK5vr 
+
+
    http://g.recordit.co/Y5cD7qK5vr.gif 
+
+   http://g.recordit.co/P5EySLBInn.gif 
+
+   http://g.recordit.co/VremFCN51g.gif  
+
+   http://g.recordit.co/ca1LDOeq4x.gif 
+
+   http://g.recordit.co/3YkFrZ8wD3.gif  
+
+   http://g.recordit.co/mswkME7uXS.gif 
+
+   http://g.recordit.co/NuSOKNX0H3.gif 
+
+   http://g.recordit.co/33YSG9q9yk.gif 
+
 
 iv. How was the application developed?
 
@@ -119,6 +130,10 @@ v. How to install and run the application.
         http://localhost:8088 " 
    
 vi. Difficulties & challenges faced during the process.
+
+   Because the application has a lot of functionality behind it, a more challenging aspect of the project was managing the data relationships involved. For example, it was challenging to get the user created orders to carry over and display on the Cart page. In addition, it was also tricky making sure that users could create more than one order from each menu and add them to the cart. 
+   
+   The second most difficult piece yet rewarding piece of the application was getting the edit functionality to consistently work. There was a lot of trial and error with creating the fetch calls used, especially with the custom menu item and order objects, and ultimately a lot of testing and adjustments was required. 
 
 viii. Integration tests 
 
