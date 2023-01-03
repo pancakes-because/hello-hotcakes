@@ -10,11 +10,11 @@ import "./NavBar.css"
 export const GuestNav = () => {
     const navigate = useNavigate()
 
-    // only need lines 16-17 uncommented if lines 45-52 are uncommented
-    // if using lines 34-43, comment out lines 16-17 and lines 45-52
+    // only need lines 16-17 uncommented if lines 35-49 are uncommented
+    // if using lines 49-68, comment out lines 16-17 and lines 35-49
 
-    const localHotcakesUser = localStorage.getItem("cart")
-    const hotcakesUserObject = JSON.parse(localHotcakesUser)
+    // const localHotcakesUser = localStorage.getItem("cart")
+    // const hotcakesUserObject = JSON.parse(localHotcakesUser)
 
     return (
         <ul className="navbar">
@@ -35,23 +35,33 @@ export const GuestNav = () => {
                 // localStorage.getItem("hotcakes_user")
                 //     ? <li className="navbar__item navbar__logout">
                 //         <Link className="navbar__link" to="" onClick={() => {
-                //             localStorage.removeItem("hotcakes_user")
-                //             localStorage.removeItem("cart") 
-                //             navigate("/", {replace: true})
+                //             fetch(`http://localhost:8088/carts/${hotcakesUserObject.cartId}`, {
+                //                 method: "DELETE"
+                //             }).then((res) => res.json())
+                //                 .then(() => {
+                //                     localStorage.removeItem("hotcakes_user")
+                //                     localStorage.removeItem("cart")
+                //                     navigate("/", { replace: true })
+                //                 })
                 //         }}>Sign Out</Link>
                 //     </li>
                 //     : ""
 
                 localStorage.getItem("hotcakes_user")
                     ? <li className="navbar__item navbar__logout">
-                        <Link className="navbar__link" to="" onClick={() => {
+                        <Link className="navbar__link" to="" onClick={(e) => {
+                            e.preventDefault()
+                            const localHotcakesUser = localStorage.getItem("cart") 
+                            const hotcakesUserObject = JSON.parse(localHotcakesUser)
                             fetch(`http://localhost:8088/carts/${hotcakesUserObject.cartId}`, {
                                 method: "DELETE"
                             }).then((res) => res.json())
                                 .then(() => {
                                     localStorage.removeItem("hotcakes_user")
                                     localStorage.removeItem("cart")
-                                    navigate("/", { replace: true })
+                                })
+                                .then(() => {
+                                    navigate("/login", { replace: true })
                                 })
                         }}>Sign Out</Link>
                     </li>
