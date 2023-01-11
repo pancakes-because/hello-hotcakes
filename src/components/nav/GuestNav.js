@@ -10,8 +10,8 @@ import "./NavBar.css"
 export const GuestNav = () => {
     const navigate = useNavigate()
 
+    // if using lines 49-68, comment out lines 16-17 and lines 35-49 
     // only need lines 16-17 uncommented if lines 35-49 are uncommented
-    // if using lines 49-68, comment out lines 16-17 and lines 35-49
 
     // const localHotcakesUser = localStorage.getItem("cart")
     // const hotcakesUserObject = JSON.parse(localHotcakesUser)
