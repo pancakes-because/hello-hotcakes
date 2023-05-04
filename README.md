@@ -67,6 +67,7 @@
    **FIRST**, users should PULL the repositories from GitHub. Please see below for links. 
 
    https://github.com/pancakes-because/hello-hotcakes 
+
    https://github.com/pancakes-because/hello-hotcakes-api 
    
    **SECOND**, users should complete the following package installations in order for the application to run. Users should be inside the "hello-hotcakes" directory before starting this process. Once inside the directory, users will run the following command to install React in their terminal, `npm install --save react-router-dom`. 
@@ -121,128 +122,128 @@
 
    ### CREATE AN ORDER USING THE "CLASSIC MENU" FORM 
 
-   Start on the "Login" page.
-   If needed, register as a new user. Either user type is fine. 
-   Sign in as user on the "Login" page. 
-   Upon signing in, the user will be on the "Home" page. 
-   See the navbar at the top of the page and click "Classic Menu". 
-   User should see a form they can fill out to create their order. 
-   User will make a selection by clicking one of the radio button inputs. 
-   User will then click the "Add to Cart" button. 
-   User should see a feedback message saying that the order was added to the cart. 
-   In the API/database, a new bject should be created in the "menuOrders" array. 
-   User may visit the "Cart" page. 
-   User should see the order they created under the "Classic Menu Orders" heading. 
+   1. Start on the "Login" page.
+   2. If needed, register as a new user. Either user type is fine. 
+   3. Sign in as user on the "Login" page. 
+   4. Upon signing in, the user will be on the "Home" page. 
+   5. See the navbar at the top of the page and click "Classic Menu". 
+   6. User should see a form they can fill out to create their order. 
+   7. User will make a selection by clicking one of the radio button inputs. 
+   8. User will then click the "Add to Cart" button. 
+   9. User should see a feedback message saying that the order was added to the cart. 
+   10. In the API/database, a new bject should be created in the "menuOrders" array. 
+   11. User may visit the "Cart" page. 
+   12. User should see the order they created under the "Classic Menu Orders" heading. 
 
    ### CREATE AN ORDER USING THE "SECRET MENU" FORM 
 
-   Start on the "Login" page.
-   If needed, register as a new user first. Register with member checkbox marked. 
-   Sign in as a member user on the "Login" page. 
-   Upon signing in, user will be on the "Home" page. 
-   See the navbar at the top of the page and click "Secret Menu". 
-   User should see a form they can fill out to create their order. 
-   User will make a selection by clicking one of the radio button inputs. 
-   User will then click the "Add to Cart" button. 
-   User should see a feedback message saying that the order was added to the cart. 
-   In the API/database, a new object should be created in the "secretMenuOrders" array. 
-   User may visit the "Cart" page. 
-   User should see the order they created under the "Secret Menu Orders" heading. 
+   1. Start on the "Login" page.
+   2. If needed, register as a new user first. Register with member checkbox marked. 
+   3. Sign in as a member user on the "Login" page. 
+   4. Upon signing in, user will be on the "Home" page. 
+   5. See the navbar at the top of the page and click "Secret Menu". 
+   6. User should see a form they can fill out to create their order. 
+   7. User will make a selection by clicking one of the radio button inputs. 
+   8. User will then click the "Add to Cart" button. 
+   9. User should see a feedback message saying that the order was added to the cart. 
+   10. In the API/database, a new object should be created in the "secretMenuOrders" array. 
+   11. User may visit the "Cart" page. 
+   12. User should see the order they created under the "Secret Menu Orders" heading. 
  
   ### CREATE AN ORDER USING THE "CUSTOM MENU" FORM 
 
-   Start on the "Login" page.
-   If needed, register as a new user. Either user type is fine.  
-   Sign in as user on the "Login" page. 
-   Upon signing in, the user will be on the "Home" page. 
-   See the navbar at the top of the page and click "Custom Menu". 
-   User should see a form they can fill out to create their order. 
-   For each field available, user should make a selection by choosing an option from the drop-down menu.
-   User will then click the "Add to Cart" button. 
-   User should see a feedback message saying that the order was added to the cart. 
-   In the API/database, a new object should be created in the "customMenuItems" array. 
-   In the API/database, a new object should be created in the "customMenuOrders" array. 
-   User may visit the "Cart" page. 
-   User should see the order they created under the "Custom Menu Orders" heading. 
+   1. Start on the "Login" page.
+   2. If needed, register as a new user. Either user type is fine.  
+   3. Sign in as user on the "Login" page. 
+   4. Upon signing in, the user will be on the "Home" page. 
+   5. See the navbar at the top of the page and click "Custom Menu". 
+   6. User should see a form they can fill out to create their order. 
+   7. For each field available, user should make a selection by choosing an option from the drop-down menu.
+   8. User will then click the "Add to Cart" button. 
+   9. User should see a feedback message saying that the order was added to the cart. 
+   10. In the API/database, a new object should be created in the "customMenuItems" array. 
+   11. In the API/database, a new object should be created in the "customMenuOrders" array. 
+   12. User may visit the "Cart" page. 
+   13. User should see the order they created under the "Custom Menu Orders" heading. 
 
    ### EDIT A CLASSIC MENU ORDER 
 
-   Start on the "Cart" page. 
-   Please see orders listed under the "Classic Menu Orders" heading. 
-   If there are no orders, user may complete and submit the "Classic Menu" form to create an order first.
+   1. Start on the "Cart" page. 
+   2. Please see orders listed under the "Classic Menu Orders" heading. 
+   3. If there are no orders, user may complete and submit the "Classic Menu" form to create an order first.
 
-   For an individual order listed, click the "Edit Order" button. 
-   User will be redirected to the "Classic Menu" edit form. 
-   The edit form will show the radio button input selected to create the original order. 
+   4. For an individual order listed, click the "Edit Order" button. 
+   5. User will be redirected to the "Classic Menu" edit form. 
+   6. The edit form will show the radio button input selected to create the original order. 
 
-   User may edit the curent order's selection by clicking a different radio button. 
-   User may click the "Save Edit" button to record the new selection. 
-   User will be redirected to the Cart page. 
-   User may refer back to the "Classic Menu Orders" heading. Check the individual order that was edited. 
-   The order should be different and reflect the user's new choices(s) recorded by the edit form. 
-   In the API/database, the value of the "menuOrderItemId" property of the "menuOrder" object should be different. 
+   7. User may edit the curent order's selection by clicking a different radio button. 
+   8. User may click the "Save Edit" button to record the new selection. 
+   9. User will be redirected to the Cart page. 
+   10. User may refer back to the "Classic Menu Orders" heading. Check the individual order that was edited. 
+   11. The order should be different and reflect the user's new choices(s) recorded by the edit form. 
+   12. In the API/database, the value of the "menuOrderItemId" property of the "menuOrder" object should be different. 
 
    ### EDIT A SECRET MENU ORDER 
 
-   Start on the "Cart" page. 
-   Please see orders listed under the "Secret Menu Orders" heading. 
-   If there are no orders, user may complete and submit the "Secret Menu" form to create an order first.
+   1. Start on the "Cart" page. 
+   2. Please see orders listed under the "Secret Menu Orders" heading. 
+   3. If there are no orders, user may complete and submit the "Secret Menu" form to create an order first.
 
-   For an individual order listed, click the "Edit Order" button. 
-   User will be redirected to the "Secret Menu" edit form. 
-   The edit form will show the radio button input selected to create the original order. 
+   4. For an individual order listed, click the "Edit Order" button. 
+   5. User will be redirected to the "Secret Menu" edit form. 
+   6. The edit form will show the radio button input selected to create the original order. 
 
-   User may edit the curent order's selection by clicking a different radio button. 
-   User may click the "Save Edit" button to record the new selection. 
-   User will be redirected to the Cart page. 
-   User may refer back to the "Secret Menu Orders" heading. Check the individual order that was edited. 
-   The order should be different and reflect the user's new choices(s) recorded by the edit form. 
-   In the API/database, the value of the "secretMenuOrderItemId" property of the "secretMenuOrder" object should be different. 
+   7. User may edit the curent order's selection by clicking a different radio button. 
+   8. User may click the "Save Edit" button to record the new selection. 
+   9. User will be redirected to the Cart page. 
+   10. User may refer back to the "Secret Menu Orders" heading. Check the individual order that was edited. 
+   11. The order should be different and reflect the user's new choices(s) recorded by the edit form. 
+   12. In the API/database, the value of the "secretMenuOrderItemId" property of the "secretMenuOrder" object should be different. 
 
    ### EDIT A CUSTOM MENU ORDER 
 
-   Start on the "Cart" page. 
-   Please see orders listed under the "Custom Menu Orders" heading. 
-   If there are no orders, user may complete and submit the "Custom Menu" form to create an order first.
+   1. Start on the "Cart" page. 
+   2. Please see orders listed under the "Custom Menu Orders" heading. 
+   3. If there are no orders, user may complete and submit the "Custom Menu" form to create an order first.
 
-   For an individual order listed, click the "Edit Order" button. 
-   User will be redirected to the "Custom Menu" edit form. 
-   The edit form will show the select inputs chosen to create the original order. 
+   4. For an individual order listed, click the "Edit Order" button. 
+   5. User will be redirected to the "Custom Menu" edit form. 
+   6. The edit form will show the select inputs chosen to create the original order. 
 
-   User may edit the curent order's choices by choosing a different option for one or more of the select input fields. 
-   User may click the "Save Edit" button to record the new choice(s). 
-   User will be redirected to the Cart page. 
-   User may refer back to the "Custom Menu Orders" heading. Check the individual order that was edited. 
-   The order should be different and reflect the user's new choices(s) recorded by the edit form. 
-   In the API/database, the value of the "batterId", "fillingId", "toppingId", and/or "stackSizeId" property of the "customMenuItems" object should be different depending on what was edited by the user. 
+   7. User may edit the curent order's choices by choosing a different option for one or more of the select input fields. 
+   8. User may click the "Save Edit" button to record the new choice(s). 
+   9. User will be redirected to the Cart page. 
+   10. User may refer back to the "Custom Menu Orders" heading. Check the individual order that was edited. 
+   11. The order should be different and reflect the user's new choices(s) recorded by the edit form. 
+   12. In the API/database, the value of the "batterId", "fillingId", "toppingId", and/or "stackSizeId" property of the "customMenuItems" object should be different depending on what was edited by the user. 
 
    ### DELETE A CLASSIC MENU ORDER
 
-   Start on the "Cart" page. 
-   Please see orders listed under the "Classic Menu Orders" heading. 
-   If there are no orders, user may complete and submit the "Classic Menu" form to create an order first.
+   1. Start on the "Cart" page. 
+   2. Please see orders listed under the "Classic Menu Orders" heading. 
+   3. If there are no orders, user may complete and submit the "Classic Menu" form to create an order first.
 
-   For an individual order listed, click the "Delete Order" button. 
-   Under the "Classic Menu Orders" heading, the chosen individual order should no longer be displayed. 
-   In the API/database, the matching object representing the order in the "menuOrders" array should be gone. 
+   4. For an individual order listed, click the "Delete Order" button. 
+   5. Under the "Classic Menu Orders" heading, the chosen individual order should no longer be displayed. 
+   6. In the API/database, the matching object representing the order in the "menuOrders" array should be gone. 
 
    ### DELETE A SECRET MENU ORDER
 
-   Start on the "Cart" page. 
-   Please see orders listed under the "Secret Menu Orders" heading. 
-   If there are no orders, user may complete and submit the "Classic Menu" form to create an order first.
+   1. Start on the "Cart" page. 
+   2. Please see orders listed under the "Secret Menu Orders" heading. 
+   3. If there are no orders, user may complete and submit the "Classic Menu" form to create an order first.
 
-   For an individual order listed, click the "Delete Order" button. 
-   Under the "Secret Menu Orders" heading, the chosen individual order should no longer be displayed. 
-   In the API/database, the matching object representing the order in the "secretMenuOrders" array should be gone. 
+   4. For an individual order listed, click the "Delete Order" button. 
+   5. Under the "Secret Menu Orders" heading, the chosen individual order should no longer be displayed. 
+   6. In the API/database, the matching object representing the order in the "secretMenuOrders" array should be gone. 
 
    ### DELETE A CUSTOM MENU ORDER
 
-   Start on the "Cart" page. 
-   Please see orders listed under the "Custom Menu Orders" heading. 
-   If there are no orders, user may complete and submit the "Classic Menu" form to create an order first.
+   1. Start on the "Cart" page. 
+   2. Please see orders listed under the "Custom Menu Orders" heading. 
+   3. If there are no orders, user may complete and submit the "Classic Menu" form to create an order first.
 
-   For an individual order listed, click the "Delete Order" button. 
-   Under the "Custom Menu Orders" heading, the chosen individual order should no longer be displayed. 
-   In the API/database, the matching object representing the order in the "customMenuOrders" array should be gone. 
-   In the API/database, the matching object representing the order in the "customMenuItems" array should be gone.
+   4. For an individual order listed, click the "Delete Order" button. 
+   5. Under the "Custom Menu Orders" heading, the chosen individual order should no longer be displayed. 
+   6. In the API/database, the matching object representing the order in the "customMenuOrders" array should be gone. 
+   7. In the API/database, the matching object representing the order in the "customMenuItems" array should be gone.
