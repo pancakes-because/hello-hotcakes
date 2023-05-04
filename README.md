@@ -25,31 +25,31 @@
 
    All users get access to the restaraunt's "Custom Menu", which is a page view that shows four select input fields and a submit button. Each select input field holds options that for the user to choose. When the user makes their selections using the input fields and clicks the submit button, the user's selections combine to form an "item" that is stored in the database. An "order" is then formed based on the item and stored in the database.
 
-    ![](https://github.com/hello-hotcakes/http://g.recordit.co/ca1LDOeq4x.gif) 
+   **http://g.recordit.co/ca1LDOeq4x.gif**
    
    All users have access to another form called the "Classic Menu", which is a page view with a list of radio input fields and a single submit button. Each radio input represents one "item". When the user selects an item and clicks the submit button, an "order" is created and stored in the database. 
 
-   ![](https://github.com/hello-hotcakes/http://g.recordit.co/P5EySLBInn.gif)
+   **http://g.recordit.co/P5EySLBInn.gif**
 
    A third form/page view is also available, called "Secret Menu". This form functions like the "Classic Menu" form, but it is only available to users that are marked as members. 
 
-    ![](https://github.com/hello-hotcakes/http://g.recordit.co/VremFCN51g.gif) 
+   **http://g.recordit.co/VremFCN51g.gif** 
    
    Each "order" created is displayed on the "Cart" page, which references a unique "cart" object that is created for each user after they sign into the app. Each order reflected on the cart page has its own edit button and delete button. 
 
    When the edit button for an individual order is clicked, the user is redirected to an edit form with a save button. The edit form will show the user's original selections and let them make changes. After clicking the save button, the changes are recorded and the database updates the matching order/item. Finally, the user is then redirected back to the Cart page to see their changes reflected on the order they edited. 
 
-    ![](https://github.com/hello-hotcakes/http://g.recordit.co/3YkFrZ8wD3.gif) 
+   **http://g.recordit.co/3YkFrZ8wD3.gif** 
 
-    ![](https://github.com/hello-hotcakes/http://g.recordit.co/mswkME7uXS.gif) 
+   **http://g.recordit.co/mswkME7uXS.gif** 
 
-    ![](https://github.com/hello-hotcakes/http://g.recordit.co/NuSOKNX0H3.gif)
+   **http://g.recordit.co/NuSOKNX0H3.gif** 
    
    When the delete button for an individual order is clicked, the order/item is removed from the database. As a result, the order no longer appears on the Cart page. 
 
-   ![](https://github.com/hello-hotcakes/http://g.recordit.co/Y5cD7qK5vr.gif) 
+   **http://g.recordit.co/Y5cD7qK5vr.gif** 
 
-   ![](https://github.com/hello-hotcakes/http://g.recordit.co/33YSG9q9yk.gif)
+   **http://g.recordit.co/33YSG9q9yk.gif** 
 
    To simulate finalizing the orders in the cart, users can click a "Checkout" button that navigates to a new page view called "Checkout". 
 
