@@ -51,7 +51,7 @@
 
 # What tools did you use to plan for your application? 
 
-Entity Relaitonship Diagram (ERD): 
+Entity Relationship Diagram (ERD): 
 https://dbdiagram.io/d/6386c107bae3ed7c4543abd4
 
 Wireframe: 
@@ -90,15 +90,15 @@ Checkout Page:
    
    The application uses two repositories, "hello-hotcakes" and "hello-hotcakes-api", and runs using React. The "hello-hotcakes" repository holds the project module/component code. The "hello-hotcakes-api" repository holds the API database module. The app is optimized for desktop. 
 
-   **First**, users should PULL the repositories from GitHub. Please see below for links. 
+   **FIRST**, users should PULL the repositories from GitHub. Please see below for links. 
 
    https://github.com/pancakes-because/hello-hotcakes 
 
    https://github.com/pancakes-because/hello-hotcakes-api 
    
-   **Second**, users should complete the following package installations in order for the application to run. Users should be inside the "hello-hotcakes" directory before starting this process. Once inside the directory, users will run the following command to install React in their terminal, `npm install --save react-router-dom`. 
+   **SECOND**, users should complete the following package installations in order for the application to run. Users should be inside the "hello-hotcakes" directory before starting this process. Once inside the directory, users will run the following command to install React in their terminal, `npm install --save react-router-dom`. 
 
-   **Third**, users may run the following command in their terminal, `npm start`, when they are ready to run the application. The browser will open the http://localhost:xxxx URL automatically. When successful, the message below will dispaly in the terminal. 
+   **THIRD**, users may run the following command in their terminal, `npm start`, when they are ready to run the application. The browser will open the http://localhost:xxxx URL automatically. When successful, the message below will dispaly in the terminal. 
 
     " Compiled successfully!
 
@@ -112,7 +112,7 @@ Checkout Page:
 
       webpack compiled successfully " 
 
-   **Fourth**, users will open a NEW terminal window or tab to run the API in the background. Users should be inside the "hello-hotcakes-api" directory. Users will then enter this command in the terminal, `json-server -p 8088 database.json`. When successful, the message below will display in the second terminal window/tab. 
+   **FOURTH**, users will open a NEW terminal window or tab to run the API in the background. Users should be inside the "hello-hotcakes-api" directory. Users will then enter this command in the terminal, `json-server -p 8088 database.json`. When successful, the message below will display in the second terminal window/tab. 
 
       " \{^_^}/ hi!
       
